@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css"> 
+    <script src="https://kit.fontawesome.com/055f424868.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="icon" href="fundo\icon.png">
+    <title> RE/MAX Portugal</title>
+</head>
+<body>
+    <div id="calcula">
+        <div id="botao_calcula">
+            <div id="reset" class="reset"><h1>Reset</h1></div>
+            <div id="financiamento_botao"><h1>Financiamento</h1></div>
+            <div id="reset_fin" class="reset"><h1>Reset</h1></div>
+            <div id="simula"><h1>Simula aqui!</h1></div>
+        </div>
+        <div id="calcula_conteudo" class="menu_aux">
+            <form id="simula_casa">
+                <div class="calcula_form" id="tipologia_div">
+                    <label for="tipologia" id="tipologia_label">Tipologia:</label>
+                    <div class="calcula_form_input">
+                        <span>T</span>
+                        <input type="number" min="0" max="9999" id="tipologia" value="0">
+                    </div>
+                    <button id="botao_tipologia" type="button">
+                        Próximo
+                    </button>
+                </div>
+                <div class="calcula_form" id="area_div">
+                    <button class="botao_anterior" id="botao_area_anterior" type="button">
+                        Anterior
+                    </button>
+                    <label for="area">Área útil:</label>
+                    <div class="calcula_form_input">
+                        <input type="number" class="inputgrande" min="0" max="9999" id="area" name="area" value="0">
+                        <span class="spanesquerda">m<sup>2</sup></span>
+                    </div>
+                    <button id="botao_area" type="button">
+                        Próximo
+                    </button>
+                </div>
+                <div class="calcula_form" id="idade_div">
+                    <button class="botao_anterior" id="botao_idade_anterior" type="button">
+                        Anterior
+                    </button>
+                    <label for="idade">Idade do imóvel:</label>
+                    <div class="calcula_form_input">
+                        <input type="number" class="inputgrande" min="0" max="9999" id="idade" name="idade" value="0">
+                        <span class="spanesquerda">ano(s)</span>
+                    </div>
+                    <button id="botao_idade" type="button">
+                        Próximo
+                    </button>
+                </div>
+                <div class="form_radio calcula_form" id="garagem_div">
+                    <button class="botao_anterior" id="botao_garagem_anterior" type="button">
+                        Anterior
+                    </button>
+                    <label for="garagem">Tem garagem?</label>
+                    <div class="form_radio">
+                        <div class="calcula_radio calcula_form_input">
+                            <input type="radio" name="garagem" id="garagem_sim" value="SIM">
+                            <span for="sim">Sim</span>
+                        </div>
+                        <div class="calcula_radio calcula_form_input">
+                            <input type="radio" name="garagem" id="garagem_nao" value="NAO">
+                            <span for="nao">Não</span>
+                        </div>
+                    </div>
+                    <button id="botao_garagem" type="button">
+                        Próximo
+                    </button>
+                </div>
+                <div class=" form_radio calcula_form" id="transportes_div">
+                    <button class="botao_anterior" id="botao_transportes_anterior" type="button">
+                        Anterior
+                    </button>
+                    <label for="transportes">Transportes públicos perto?</label>
+                    <div class="form_radio">
+                        <div class="calcula_radio calcula_form_input">
+                            <input type="radio" id="transportes_sim" name="transportes" value="SIM">
+                            <span for="sim">Sim</span>
+                        </div>
+                        <div class="calcula_radio calcula_form_input">
+                            <input type="radio" id="transportes_nao" name="transportes" value="NAO">
+                            <span for="nao">Não</span>
+                        </div>
+                    </div>
+                    <button id="botao_transportes" type="button">
+                        Próximo
+                    </button>
+                </div>
+            </form>
+            <div class="zonas_do_pais" id="ancora_zonas">
+                <div class="zonas" id="norte">
+                    <div id="mostra_norte" class="mostra_zona">
+                        NORTE
+                    </div>
+                    <div id="detalhes_norte" class="detalhes">
+                        <div id="valor_total_norte" class="preco_final detalhes_centro info_detalhes">
+                            <span id="norte_total" class="total_euros"></span>
+                        </div>
+                        <div class="info_detalhes">
+                            <div class="detalhes_esq">
+                                <span id="preco_norte" class="mostra_detalhes"></span>
+                            </div>
+                            <div class="detalhes_centro">
+                                <span id="quartos_norte" class="mostra_detalhes"></span>
+                            </div>
+                            <div class="detalhes_dir detalhes_com_icon">
+                                <i class="fas fa-bus"></i>:
+                                <span id="tem_transportes_norte" class="mostra_detalhes"></span>
+                            </div>
+                        </div>
+                        <div class="info_detalhes">
+                            <div class="detalhes_esq detalhes_com_icon">
+                                <i class="fas fa-home"></i>:
+                                <span id="dimensao_norte" class="mostra_detalhes"></span>
+                            </div>
+                            <div class="detalhes_centro detalhes_com_icon">
+                                <i class="fas fa-calendar-alt"></i>:
+                                <span id="idade_imovel_norte" class="mostra_detalhes"></span>
+                            </div>
+                            <div class="detalhes_dir detalhes_com_icon">
+                                <i class="fas fa-warehouse"></i>:
+                                <span id="mostra_garagem_norte" class="mostra_detalhes"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="zonas" id="centro">
+                    <div id="mostra_centro" class="mostra_zona">
+                        CENTRO
+                    </div>
+                    <div id="detalhes_centro" class="detalhes">
+                        <div id="valor_total_centro" class="preco_final detalhes_centro info_detalhes">
+                            <span id="centro_total" class="total_euros"></span>
+                        </div>
+                        <div class="info_detalhes">
+                            <div class="detalhes_esq">
+                                <span id="preco_centro" class="mostra_detalhes"></span>
+                            </div>
+                            <div class="detalhes_centro">
+                                <span id="quartos_centro" class="mostra_detalhes"></span>
+                            </div>
+                            <div class="detalhes_dir detalhes_com_icon">
+                                <i class="fas fa-bus"></i>:
+                                <span id="tem_transportes_centro" class="mostra_detalhes"></span>
+                            </div>
+                        </div>
+                        <div class="info_detalhes">
+                            <div class="detalhes_esq detalhes_com_icon">
+                                <i class="fas fa-home"></i>:
+                                <span id="dimensao_centro" class="mostra_detalhes"></span>
+                            </div>
+                            <div class="detalhes_centro detalhes_com_icon">
+                                <i class="fas fa-calendar-alt"></i>:
+                                <span id="idade_imovel_centro" class="mostra_detalhes"></span>
+                            </div>
+                            <div class="detalhes_dir detalhes_com_icon">
+                                <i class="fas fa-warehouse"></i>:
+                                <span id="mostra_garagem_centro" class="mostra_detalhes"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="zonas" id="sul">
+                    <div id="mostra_sul" class="mostra_zona">
+                        SUL
+                    </div>
+                    <div id="detalhes_sul" class="detalhes">
+                        <div id="valor_total_sul" class="preco_final detalhes_centro info_detalhes">
+                            <span id="sul_total" class="total_euros"></span>
+                        </div>
+                        <div class="info_detalhes">
+                            <div class="detalhes_esq">
+                                <span id="preco_sul" class="mostra_detalhes"></span>
+                            </div>
+                            <div class="detalhes_centro">
+                                <span id="quartos_sul" class="mostra_detalhes"></span>
+                            </div>
+                            <div class="detalhes_dir detalhes_com_icon">
+                                <i class="fas fa-bus"></i>:
+                                <span id="tem_transportes_sul" class="mostra_detalhes"></span>
+                            </div>
+                        </div>
+                        <div class="info_detalhes">
+                            <div class="detalhes_esq detalhes_com_icon">
+                                <i class="fas fa-home"></i>:
+                                <span id="dimensao_sul" class="mostra_detalhes"></span>
+                            </div>
+                            <div class="detalhes_centro detalhes_com_icon">
+                                <i class="fas fa-calendar-alt"></i>:
+                                <span id="idade_imovel_sul" class="mostra_detalhes"></span>
+                            </div>
+                            <div class="detalhes_dir detalhes_com_icon">
+                                <i class="fas fa-warehouse"></i>:
+                                <span id="mostra_garagem_sul" class="mostra_detalhes"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="financiamento">
+                <div id="escolhe_tipo" class="financiamento_sub">
+                    <div class="escolhe_tipo_op" id="escolhe_com">
+                        Com simulação
+                    </div>
+                    <div class="escolhe_tipo_op" id="escolhe_sem">
+                        Com o valor do imóvel
+                    </div>
+                </div>
+                <div id="financiamento_sem">
+                    <form>
+                        <div class="calcula_form" id="montante_total">
+                            <label for="montante" id="montante_label">Montante Total:</label>
+                            <div class="calcula_form_input">
+                                <input type="number" class="inputgrande" min="0" max="999999999" id="montante_casa" value="0">
+                                <span class="spanesquerda">€</span>
+                            </div>
+                            <button id="botao_montante" type="button">
+                                Próximo
+                            </button>
+                        </div>
+                        <div class="calcula_form" id="entrada_inicial_div">
+                            <button class="botao_anterior" id="botao_entrada_inicial_anterior" type="button">
+                                Anterior
+                            </button>
+                            <label for="label_entrada_inicial">Entrada inicial:</label>
+                            <div class="calcula_form_input">
+                                <input type="number" class="inputgrande" min="0" max="999999999" id="entrada_inicial" value="0">
+                                <span class="spanesquerda">€</span>
+                            </div>
+                            <button id="botao_entrada_inicial" type="button">
+                                Próximo
+                            </button>
+                        </div>
+                        <div class="calcula_form" id="anos_div">
+                            <button class="botao_anterior" id="botao_anos_anterior" type="button">
+                                Anterior
+                            </button>
+                            <label for="label_anos">Mensalidade s/juros:</label>
+                            <div class="slider_anos calcula_form_input">
+                                <input type="range" class="inputgrande" min="1" max="70" id="anos" value="35">
+                                <div class="info_anos">
+                                    <span class="spanesquerda" id="quantos_anos"></span>
+                                    <span class="spanesquerda" id="mensalidade"></span>
+                                </div>
+                            </div>
+                            <button id="botao_anos" type="button">
+                                Próximo
+                            </button>
+                        </div>
+                        <div class="emprestimos_ops" id="emprestimos_div">
+                            <div class="emprestimo" id="emprestimo1">
+                                <div class="imagem_banco"><img src="bancos/eurobic.png"></div>
+                                <div class="info_emprestimo">
+                                    <div class="nome_banco">
+                                        <span class="nome_banco_span">EuroBic Crédito habitação Taxa variável EuroBIC</span>
+                                        <span class="nome_banco_variavel">Variável</span>
+                                    </div>
+                                    <div class="emprestimo_valores">
+                                        <div class="desde">
+                                            <span class="mostra_desde" id="spread1"></span>
+                                            <span class="desde_texto">Spread desde</span>
+                                        </div>
+                                        <div class="desde">
+                                            <span class="mostra_desde" id="taeg1"></span>
+                                            <span class="desde_texto">TAEG desde</span>
+                                        </div>
+                                        <div class="desde">
+                                            <span class="mensalidade_final_valor" id="mensalidade_final_valor1">123e</span>
+                                            <span class="desde_texto">€/mês</span>
+                                        </div>
+                                        <div class="ver_oferta">
+                                            <a href="#">Ver oferta</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="emprestimo" id="emprestimo2">
+                                <div class="imagem_banco"><img src="bancos/abanca.png"></div>
+                                <div class="info_emprestimo">
+                                    <div class="nome_banco">
+                                        <span class="nome_banco_span">Abanca Crédito habitação Taxa variável Abanca</span>
+                                        <span class="nome_banco_variavel">Variável</span>
+                                    </div>
+                                    <div class="emprestimo_valores">
+                                        <div class="desde">
+                                            <span class="mostra_desde" id="spread2"></span>
+                                            <span class="desde_texto">Spread desde</span>
+                                        </div>
+                                        <div class="desde">
+                                            <span class="mostra_desde" id="taeg2"></span>
+                                            <span class="desde_texto">TAEG desde</span>
+                                        </div>
+                                        <div class="desde">
+                                            <span class="mensalidade_final_valor" id="mensalidade_final_valor2"></span>
+                                            <span class="desde_texto">€/mês</span>
+                                        </div>
+                                        <div class="ver_oferta">
+                                            <a href="#">Ver oferta</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="emprestimo" id="emprestimo3">
+                                <div class="imagem_banco"><img src="bancos/credito agricola.png"></div>
+                                <div class="info_emprestimo">
+                                    <div class="nome_banco">
+                                        <span class="nome_banco_span">Crédito Agrícola Crédito habitação Taxa variável Crédito Agrícola</span>
+                                        <span class="nome_banco_variavel">Variável</span>
+                                    </div>
+                                    <div class="emprestimo_valores">
+                                        <div class="desde">
+                                            <span class="mostra_desde" id="spread3"></span>
+                                            <span class="desde_texto">Spread desde</span>
+                                        </div>
+                                        <div class="desde">
+                                            <span class="mostra_desde" id="taeg3"></span>
+                                            <span class="desde_texto">TAEG desde</span>
+                                        </div>
+                                        <div class="desde">
+                                            <span class="mensalidade_final_valor" id="mensalidade_final_valor3"></span>
+                                            <span class="desde_texto">€/mês</span>
+                                        </div>
+                                        <div class="ver_oferta">
+                                            <a href="#">Ver oferta</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="menu-vert-esq">
+        <nav id="menu-topo">
+            <ul>
+                <div id="m-esq">
+                    <li id="seta" onclick="aparecer_vert_esq()">&larr;</li>
+                    <li><a href="#"><img class="logo" src="fundo/logo_remax.webp"></a></li>
+                </div>
+                <div id="m-dir">
+                    <li class="botao">
+                        <div id="lingua-vert">
+                            <button onclick="linguagem2()" onmouseover="over_linguagem2()" onmouseout="out_linguagem2()" id="linguagem-vert">Português&nbsp;&nbsp;<i class="arrow down"></i></button>
+                            <div id="selecao-linguagem-vert">
+                                <a class="selec-en" href="#">Inglês</a>
+                                <a class="selec-pt" href="#">Português</a>
+                            </div>
+                        </div>
+                    </li>
+                </div>
+            </ul>
+        </nav>
+        <div id="menu-lateral">
+            <ul>
+                <li><a href="#">Empreendimentos</a></li>
+                <li><a href="#">RE/MAX Collection</a></li>
+                <li><a href="#">Comprar</a></li>
+                <li><a href="#">Vender</a></li>
+                <li id="botao-lateral">
+                    <div id="agencia-lateral" onclick="agencia()" onmouseout="out_agencia()" onmouseover="over_agencia()" >Agentes&nbsp;&nbsp;<i class="arrow down"></i>
+                        <div id="selecao-agencia-lateral">
+                            <a href="#">Procurar um Agente ou Agência</a>
+                            <a href="#">Seja um Agente RE/MAX</a>
+                            <a href="#">Franchasing</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div id="menu-baixo">
+            <button id="registar">Registar</button>
+            <button id="entrar">Entrar</button>
+        </div>
+    </div>
+    <div class="wrapper">
+        <header>
+            <nav id="main-menu">
+                <ul>
+                    <div id="menu-vert">
+                        <div class="menu-esq">
+                            <li><label onclick="aparecer_vert_esq()">&#9776;</label></li>
+                            <li class="posicao-logo"><a href="#"><img class="logo" src="fundo/logo_remax.webp"></a></li>
+                        </div>
+                        <div class="menu-dir">
+                            <li>
+                                <a href="#">
+                                <span class="account">
+                                    <i class="far fa-user-circle" class="loginimagem"></i>
+                                </span>
+                                <span>Entrar</span>
+                                </a>
+                            </li>
+                        </div>
+                    </div>
+                    <div id="menu-horiz">
+                        <div class="menu-esq">
+                            <li class="posicao-logo"><a href="#"><img class="logo" src="fundo/logo_remax.webp"></a></li>
+                            <li class="botao">
+                                <div id="lingua">
+                                    <button onclick="linguagem1()" onmouseover="over_linguagem1()" onmouseout="out_linguagem1()" id="linguagem"> Português&nbsp;&nbsp;<i class="arrow down"></i></button>
+                                    <div id="selecao-linguagem">
+                                        <a class="selec-en" href="#">Inglês</a>
+                                        <a class="selec-pt" href="#">Português</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </div>
+                        <div class="menu-dir">
+                            <li><a href="#">Empreendimentos</a></li>
+                            <li><a href="#">RE/MAX Collection</a></li>
+                            <li><a href="#">Comprar</a></li>
+                            <li><a href="#">Vender</a></li>
+                            <li class="botao">
+                                <div id="agencia">
+                                    <button id="botao-agencia">Agências&nbsp;&nbsp;<i class="arrow down"></i> </button>
+                                    <div id="selecao-agencia">
+                                        <a href="#">Procurar um Agente ou Agência</a>
+                                        <a href="#">Seja um Agente RE/MAX</a>
+                                        <a href="#">Franchasing</a>
+                                        <a href="#">Top Agentes e Agências</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <a id="login-entrar" href="#">
+                                <span class="account">
+                                    <i class="far fa-user-circle" class="loginimagem"></i>
+                                </span>
+                                <span>Entrar</span>
+                                </a>
+                            </li>
+                        </div>
+                    </div>
+                </ul>
+            </nav>
+        </header>
+        <div id="imagem-search">
+            <div id="is_com_t">
+                <h1>Isto nunca foi tão simples!</h1>
+                <div id="search">
+                    <ul>
+                        <li onclick="comprar1()" onmouseover="over_comprar1()" onmouseout="out_comprar1()" id="compra"><a href="#"></a>Comprar</li>
+                        <li onclick="arrendar1()" onmouseover="over_arrendar1()" onmouseout="out_arrendar1()" id="arrenda"><a href="#"></a>Arrendar</li>
+                    </ul>
+                    <div id="caixapesquisa">
+                        <input type="text" id="pesquisa" placeholder="Onde? (Concelho ou Freguesia ou Zona ou Morada)" >
+                        <div id="separador"></div>
+                        <button onmouseover="over_pesquisa1()" onmouseout="out_pesquisa1()" id="icon-pesquisa" title="procura_onde"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+            </div>
+            <button id="ancora_VerMais">
+                <i class="fas fa-chevron-down"></i>
+                Ver Mais
+            </button>
+        </div>
+        <div class="corpo">
+            <div id="publicidade">
+                <img src="fundo/publicidade1.webp">
+                <img src="fundo/publicidade2.webp">
+            </div>
+            <div id="novidades" class="mostra">
+                <div class="controlos" >
+                    <div class="titulo_mostra"> <h1>Novidades</h1> </div>
+                    <div class="vertodos">
+                        <a href="#">Ver todos</a>
+                    </div>
+                    <div class="setas" >
+                        <div class="seta_esquerda" id="seta_esquerda_A">
+                            <i class="fas fa-chevron-left"></i>
+                        </div>
+                        <div class="seta_direita" id="seta_direita_A">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="slideshow" id="slide_A">
+                    <div class="slide">
+                        <div class="foto_casa">
+                            <img src="casas/casa1.jpg">
+                        </div>
+                        <div class="info_agente">
+                            <span><span class="cidade">Viseu</span> - Viseu, Viseu</span>
+                            <img src="agentes/agente1.jpg">
+                        </div>
+                        <div class="info_casa">
+                            Duplex
+                            <i class="fas fa-home"> 330 m<sup>2</sup></i>
+                            <i class="fas fa-bath"> 0</i>
+                            <i class="fas fa-bed"> 3</i>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="foto_casa">
+                            <img src="casas/casa2.jpg">
+                        </div>
+                        <div class="info_agente">
+                            <span><span class="cidade">Porto</span>- Vila Nova de Gaia, Mafamude e Vilar do Paraíso</span>
+                            <img src="agentes/agente2.jpg">
+                        </div>
+                        <div class="info_casa">
+                            Apartamento
+                            <i class="fas fa-home"> 91 m<sup>2</sup></i>
+                            <i class="fas fa-bath"> 1</i>
+                            <i class="fas fa-bed"> 2</i>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="foto_casa">
+                            <img src="casas/casa3.jpg">
+                        </div>
+                        <div class="info_agente">
+                            <span><span class="cidade">Viseu</span> - Viseu, Viseu</span>
+                            <img src="agentes/agente3.png">
+                        </div>
+                        <div class="info_casa">
+                           Duplex
+                           <i class="fas fa-home"> 292 m<sup>2</sup></i>
+                           <i class="fas fa-bath"> 0</i>
+                           <i class="fas fa-bed"> 3</i>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="foto_casa">
+                            <img src="casas/casa4.jpg">
+                        </div>
+                        <div class="info_agente">
+                            <span><span class="cidade">Aveiro</span> - Oliveira do Bairro, Palhaça</span>
+                            <img src="agentes/agente4.png"> 
+                        </div>
+                        <div class="info_casa">
+                            Duplex
+                            <i class="fas fa-home"> 163 m<sup>2</sup></i>
+                            <i class="fas fa-bath"> 2</i>
+                            <i class="fas fa-bed"> 3</i>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="foto_casa">
+                            <img src="casas/casa5.png">
+                        </div>
+                        <div class="info_agente">
+                            <span><span class="cidade">Coimbra</span> - Coimbra, Santo António dos Olivais</span>
+                            <img src="agentes/agente5.jpg">
+                        </div>
+                        <div class="info_casa">
+                            Duplex
+                            <i class="fas fa-home"> 84 m<sup>2</sup></i>
+                            <i class="fas fa-bath"> 1</i>
+                            <i class="fas fa-bed"> 3</i>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="foto_casa">
+                            <img src="casas/casa6.png">
+                        </div>
+                        <div class="info_agente">
+                            <span><span class="cidade">Lisboa</span> - Sintra, Algueirão-Mem Martins</span>
+                           <img src="agentes/agente6.jpg">
+                        </div>
+                        <div class="info_casa">
+                            Duplex
+                            <i class="fas fa-home"> 100 m<sup>2</sup></i>
+                            <i class="fas fa-bath"> 1</i>
+                            <i class="fas fa-bed"> 2</i>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="foto_casa">
+                            <img src="casas/casa7.jpg">
+                        </div>
+                        <div class="info_agente">
+                            <span><span class="cidade">Santarém</span> - Santarém (Marvila), Santa Iria da Ribeira de Santarém, Santarém (São Salvador) e Santarém (São Nicolau) </span>
+                            <img src="agentes/agente7.jpg">
+                        </div>
+                        <div class="info_casa">
+                            Duplex
+                            <i class="fas fa-home"> 89 m<sup>2</sup></i>
+                            <i class="fas fa-bath"> 1</i>
+                            <i class="fas fa-bed"> 2</i>
+                        </div>
+                    </div>
+                    <div class="ultimo_slide slide">
+                        <div class="foto_casa">
+                            <img src="casas/casa8.jpg">
+                        </div>
+                        <div class="info_agente">
+                            <span><span class="cidade">Lisboa</span> - Sintra, Rio de Mouro </span>
+                            <img src="agentes/agente8.jpg">
+                        </div>
+                        <div class="info_casa">
+                            Moradia
+                            <i class="fas fa-home"> 352 m<sup>2</sup></i>
+                            <i class="fas fa-bath"> 4</i>
+                            <i class="fas fa-bed"> 4</i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="collection" class="mostra" >
+                <div class="controlos" >
+                    <div class="titulo_mostra"> <h1>RE/MAX Collection</h1> </div>
+                    <div class="vertodos">
+                        <a href="#">Ver todos</a>
+                    </div>
+                    <div class="setas" >
+                        <div class="seta_esquerda" id="seta_esquerda_B">
+                            <i class="fas fa-chevron-left"></i>
+                        </div>
+                        <div class="seta_direita" id="seta_direita_B">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="slideshow" id="slide_B">
+                    <div class="slide">
+                        <div class="foto_casa">
+                            <img src="casas/casa9.jpg">
+                        </div>
+                        <div class="info_agente">
+                            <span><span class="cidade">Lisboa</span> - Mafra, Igreja Nova e Cheleiros </span>
+                            <img src="agentes/agente9.png">
+                        </div>
+                        <div class="info_casa">
+                            Apartamento
+                            <i class="fas fa-home"> 145 m<sup>2</sup></i>
+                            <i class="fas fa-bath"> 2</i>
+                            <i class="fas fa-bed"> 1</i>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="foto_casa">
+                            <img src="casas/casa10.jpg">
+                        </div>
+                        <div class="info_agente">
+                            <span><span class="cidade">Lisboa</span> -Lisboa, Santo António</span>
+                            <img src="agentes/agente10.png">
+                        </div>
+                        <div class="info_casa">
+                            Apartamento
+                            <i class="fas fa-home"> 234 m<sup>2</sup></i>
+                            <i class="fas fa-bath"> 2</i>
+                            <i class="fas fa-bed"> 2</i>
+                        </div>
+                    </div><div class="slide">
+                        <div class="foto_casa">
+                            <img src="casas/casa11.jpg">
+                        </div>
+                        <div class="info_agente">
+                            <span><span class="cidade">Lisboa</span> - Cascais, Cascais e Estoril</span>
+                            <img src="agentes/agente11.jpg">
+                        </div>
+                        <div class="info_casa">
+                            Apartamento
+                            <i class="fas fa-home"> 234 m<sup>2</sup></i>
+                            <i class="fas fa-bath"> 2</i>
+                            <i class="fas fa-bed"> 2</i>
+                        </div>
+                    </div><div class="slide">
+                        <div class="foto_casa">
+                            <img src="casas/casa12.jpg">
+                        </div>
+                        <div class="info_agente">
+                            <span><span class="cidade">Lisboa</span> - Lisboa, Alvalade </span>
+                            <img src="agentes/agente12.jpg">
+                        </div>
+                        <div class="info_casa">
+                            Apartamento
+                            <i class="fas fa-home"> 221 m<sup>2</sup></i>
+                            <i class="fas fa-bath"> 1</i>
+                            <i class="fas fa-bed"> 1</i>
+                        </div>
+                    </div><div class="slide">
+                        <div class="foto_casa">
+                            <img src="casas/casa13.jpg">
+                        </div>
+                        <div class="info_agente">
+                            <span><span class="cidade">Setubal</span> - Grândola, Carvalhal</span>
+                            <img src="agentes/agente13.jpg">
+                        </div>
+                        <div class="info_casa">
+                            Moradia
+                            <i class="fas fa-home"> 234 m<sup>2</sup></i>
+                            <i class="fas fa-bath"> 2</i>
+                            <i class="fas fa-bed"> 2</i>
+                        </div>
+                    </div><div class="slide">
+                        <div class="foto_casa">
+                            <img src="casas/casa14.jpg">
+                        </div>
+                        <div class="info_agente">
+                            <span><span class="cidade">Ilha de São Miguel</span> - Ponta Delgada, São Vicente Ferreira</span>
+                            <img src="agentes/agente14.png">
+                        </div>
+                        <div class="info_casa">
+                            Apartamento
+                            <i class="fas fa-home"> 545 m<sup>2</sup></i>
+                            <i class="fas fa-bath"> 3</i>
+                            <i class="fas fa-bed"> 3</i>
+                        </div>
+                    </div><div class="slide">
+                        <div class="foto_casa">
+                            <img src="casas/casa15.jpg">
+                        </div>
+                        <div class="info_agente">
+                            <span><span class="cidade">Lisboa</span> - Sintra, Queluz e Belas</span>
+                            <img src="agentes/agente15.jpg">
+                        </div>
+                        <div class="info_casa">
+                            Apartamento
+                            <i class="fas fa-home"> 212 m<sup>2</sup></i>
+                            <i class="fas fa-bath"> 2</i>
+                            <i class="fas fa-bed"> 2</i>
+                        </div>
+                    </div><div class="slide ultimo_slide">
+                        <div class="foto_casa">
+                            <img src="casas/casa16.jpg">
+                        </div>
+                        <div class="info_agente">
+                            <span><span class="cidade">Faro</span> - Olhão, Olhão</span>
+                           <img src="agentes/agente16.jpg">
+                        </div>
+                        <div class="info_casa">
+                            Apartamento
+                            <i class="fas fa-home"> 154 m<sup>2</sup></i>
+                            <i class="fas fa-bath"> 2</i>
+                            <i class="fas fa-bed"> 2</i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="empreendimentos" class="mostra">
+                <div class="controlos">
+                    <div class="titulo_mostra"> <h1>Empreendimentos</h1> </div>
+                    <div class="vertodos">
+                        <a href="#">Ver todos</a>
+                    </div>
+                    <div class="setas" >
+                        <div class="seta_esquerda" id="seta_esquerda_C">
+                            <i class="fas fa-chevron-left"></i>
+                        </div>
+                        <div class="seta_direita" id="seta_direita_C">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="slideshow" id="slide_C">
+                    <div class="slide">
+                        <div class="foto_casa">
+                            <img src="casas/casa17.jpg">
+                        </div>
+                        <div class="info_agente">
+                            Desde 590,000 €
+                            Lisboa
+                        </div>
+                        <div class="info_casa">
+                            Empreendimento Lux Prime
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="foto_casa">
+                            <img src="casas/casa18.jpg">
+                        </div>
+                        <div class="info_agente">
+                            Desde 460,000 €
+                            Lisboa
+                        </div>
+                        <div class="info_casa">
+                            Sanches Residência
+                        </div>
+                    </div><div class="slide">
+                        <div class="foto_casa">
+                            <img src="casas/casa19.jpg">
+                        </div>
+                        <div class="info_agente">
+                            Sem imóveis disponíveis
+                            Vila Nova de Gaia
+                        </div>
+                        <div class="info_casa">
+                            Jardim das Camélias
+                        </div>
+                    </div><div class="slide">
+                        <div class="foto_casa">
+                            <img src="casas/casa20.jpg">
+                        </div>
+                        <div class="info_agente">
+                            Sem imóveis disponíveis
+                            Lisboa
+                        </div>
+                        <div class="info_casa">
+                            Poiares de São Bento
+                        </div>
+                    </div><div class="slide">
+                        <div class="foto_casa">
+                            <img src="casas/casa21.jpg">
+                        </div>
+                        <div class="info_agente">
+                            Sem imóveis disponíveis
+                            Guimarães
+                        </div>
+                        <div class="info_casa">
+                            Living Arcela 14
+                        </div>
+                    </div><div class="slide">
+                        <div class="foto_casa">
+                            <img src="casas/casa22.jpg">
+                        </div>
+                        <div class="info_agente">
+                            Desde 260,000 €
+                            Bombarral
+                        </div>
+                        <div class="info_casa">
+                            Urbanização Quinta do Sanguinhal
+                        </div>
+                    </div><div class="slide">
+                        <div class="foto_casa">
+                            <img src="casas/casa23.jpg">
+                        </div>
+                        <div class="info_agente">
+                            Desde 160,000 €
+                            Albufeira
+                        </div>
+                        <div class="info_casa">
+                            Empreendimento Albufeira Green Apartments
+                        </div>
+                    </div><div class="slide ultimo_slide">
+                        <div class="foto_casa">
+                            <img src="casas/casa24.jpg">
+                        </div>
+                        <div class="info_agente">
+                            Sem imóveis disponíveis
+                            Lisboa
+                        </div>
+                        <div class="info_casa">
+                            Empreendimento VITOR CORDON 38
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="concelhos">
+                <div class="titulo_concelhos">
+                    <h1>Concelhos mais procurados</h1>
+                </div>
+                <div class="mostra_concelhos">
+                    <div id="lisboa" class="procura_concelho">
+                        <div class="cidade">Lisboa</div>
+                        <div class="cidade_vermais">Ver mais</div>
+                    </div>
+                    <div id="porto" class="procura_concelho">
+                        <div class="cidade">Porto</div>
+                        <div class="cidade_vermais">Ver mais</div>
+                    </div>
+                    <div id="coimbra" class="procura_concelho">
+                        <div class="cidade">Coimbra</div>
+                        <div class="cidade_vermais">Ver mais</div>
+                    </div>
+                    <div id="braga" class="procura_concelho">
+                        <div class="cidade">Braga</div>
+                        <div class="cidade_vermais">Ver mais</div>
+                    </div>
+                    <div id="faro" class="procura_concelho">
+                        <div class="cidade">Faro</div>
+                        <div class="cidade_vermais">Ver mais</div>
+                    </div>
+                    <div id="leiria" class="procura_concelho">
+                        <div class="cidade">Leiria</div>
+                        <div class="cidade_vermais">Ver mais</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="corpo2">
+            <div id="agentes">
+                <div class="titulo_agentes">
+                    <h4>Agentes & Agências</h4>
+                </div>
+                <div class="agentes_container">
+                    <div class="container_titulo_agentes">
+                        <h1>Pessoas a falar com pessoas. Todos os dias.</h1>
+                    </div>
+                    <div class="agentes_texto">
+                        Em Portugal, desde 2000, a RE/MAX Portugal 
+                        tem vindo a consolidar a sua liderança. A 
+                        força da marca, a eficiência do serviço e 
+                        satisfação dos seus colaboradores têm 
+                        vindo a ser reconhecidas e premiadas 
+                        anualmente por várias entidades. Em 
+                        Portugal, a RE/MAX é ainda líder em número 
+                        de transacções, agências e agentes associados.
+                    </div>
+                    <div class="imagem_agentes">
+                        <div class="botoes_agentes">
+                            <button type="button" id="encontrar_agente">
+                                Encontrar Agente
+                            </button>
+                            <button type="button" id="encontrar_agencia">
+                                Encontrar Agência
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="descobre_emp">
+                <div class="empr_foto">
+                    <img src="fundo/fundo_emp.webp">
+                </div>
+                <div class="empr_cont">
+                    <div class="empr_titulo">
+                        <h1>Empreendimentos</h1>
+                    </div>
+                    <div class="empr_texto">
+                        Se é investidor, comprador ou até mesmo construtor consulte 
+                        a nossa carteira de empreendimentos RE/MAX. Pesquise todos 
+                        os empreendimentos que a RE/MAX tem em carteira.
+                    </div>
+                    <button type="button">
+                        Descobrir empreendimentos
+                    </button>
+                </div>
+            </div>
+            <div id="pesquisas">
+                <div class="pesquisas_titulo">
+                    <h1>Pesquisas mais comuns</h1>
+                </div>
+                <div class="pesquisas_barra" id="barra1">
+                    <div class="pesquisas_texto" id="titulo1">
+                        Apartamento
+                    </div>
+                    <div class="pesquisas_seta">
+                        <i class="fas fa-chevron-down" id="seta1"></i>
+                    </div>
+                </div>
+                <div class="esconde_pesquisas" id="esconde1">
+                    <ul id="menu1">
+                    <li>Lisboa</li>
+                    <li>Sintra</li>
+                    <li>Cascais</li>
+                    <li>Oeiras</li>
+                    <li>Porto</li>
+                    <li>Amadora</li>
+                    <li>Vila Nova de Gaia</li>
+                    <li>Almada</li>
+                    <li>Loures</li>
+                    <li>Vila Franca de Xira</li>
+                    <li>Seixal</li>
+                    <li>Odivelas</li>
+                    <li>Braga</li>
+                    <li>Portimão</li>
+                    <li>Matosinhos</li>
+                    <li>Setúbal</li>
+                    <li>Albufeira</li>
+                    <li>Maia</li>
+                    <li>Loulé</li>
+                    <li>Gondomar</li>
+                    <li>Coimbra</li>
+                    <li>Mafra</li>
+                    <li>Leiria</li>
+                    <li>Barreiro</li>
+                    <li>Funchal</li>
+                    <li>Alenquer</li>
+                    <li>Vila Nova de Famalicão</li>
+                    <li>Faro</li>
+                    <li>Silves</li>
+                    <li>Montijo</li>
+                    </ul>
+                </div>
+                <div class="pesquisas_barra" id="barra2">
+                    <div class="pesquisas_texto" id="titulo2">
+                        Loja
+                    </div>
+                    <div class="pesquisas_seta">
+                        <i class="fas fa-chevron-down" id="seta2"></i>
+                    </div>
+                </div>
+                <div class="esconde_pesquisas" id="esconde2">
+                    <ul id="menu2">
+                    <li>Lisboa</li>
+                    <li>Sintra</li>
+                    <li>Cascais</li>
+                    <li>Oeiras</li>
+                    <li>Porto</li>
+                    <li>Amadora</li>
+                    <li>Vila Nova de Gaia</li>
+                    <li>Almada</li>
+                    <li>Loures</li>
+                    <li>Vila Franca de Xira</li>
+                    <li>Seixal</li>
+                    <li>Odivelas</li>
+                    <li>Braga</li>
+                    <li>Portimão</li>
+                    <li>Matosinhos</li>
+                    <li>Setúbal</li>
+                    <li>Albufeira</li>
+                    <li>Maia</li>
+                    <li>Loulé</li>
+                    <li>Gondomar</li>
+                    <li>Coimbra</li>
+                    <li>Mafra</li>
+                    <li>Leiria</li>
+                    <li>Barreiro</li>
+                    <li>Funchal</li>
+                    <li>Alenquer</li>
+                    <li>Vila Nova de Famalicão</li>
+                    <li>Faro</li>
+                    <li>Silves</li>
+                    <li>Montijo</li>
+                    </ul>
+                </div>
+                <div class="pesquisas_barra" id="barra3">
+                    <div class="pesquisas_texto" id="titulo3">
+                        Moradia
+                    </div>
+                    <div class="pesquisas_seta">
+                        <i class="fas fa-chevron-down" id="seta3"></i>
+                    </div>
+                </div>
+                <div class="esconde_pesquisas" id="esconde3">
+                    <ul id="menu3">
+                    <li>Lisboa</li>
+                    <li>Sintra</li>
+                    <li>Cascais</li>
+                    <li>Oeiras</li>
+                    <li>Porto</li>
+                    <li>Amadora</li>
+                    <li>Vila Nova de Gaia</li>
+                    <li>Almada</li>
+                    <li>Loures</li>
+                    <li>Vila Franca de Xira</li>
+                    <li>Seixal</li>
+                    <li>Odivelas</li>
+                    <li>Braga</li>
+                    <li>Portimão</li>
+                    <li>Matosinhos</li>
+                    <li>Setúbal</li>
+                    <li>Albufeira</li>
+                    <li>Maia</li>
+                    <li>Loulé</li>
+                    <li>Gondomar</li>
+                    <li>Coimbra</li>
+                    <li>Mafra</li>
+                    <li>Leiria</li>
+                    <li>Barreiro</li>
+                    <li>Funchal</li>
+                    <li>Alenquer</li>
+                    <li>Vila Nova de Famalicão</li>
+                    <li>Faro</li>
+                    <li>Silves</li>
+                    <li>Montijo</li>
+                    </ul>
+                </div>
+                <div class="pesquisas_barra" id="barra4">
+                    <div class="pesquisas_texto" id="titulo4">
+                        Terreno
+                    </div>
+                    <div class="pesquisas_seta">
+                        <i class="fas fa-chevron-down" id="seta4"></i>
+                    </div>
+                </div>
+                <div class="esconde_pesquisas" id="esconde4">
+                    <ul id="menu4">
+                    <li>Lisboa</li>
+                    <li>Sintra</li>
+                    <li>Cascais</li>
+                    <li>Oeiras</li>
+                    <li>Porto</li>
+                    <li>Amadora</li>
+                    <li>Vila Nova de Gaia</li>
+                    <li>Almada</li>
+                    <li>Loures</li>
+                    <li>Vila Franca de Xira</li>
+                    <li>Seixal</li>
+                    <li>Odivelas</li>
+                    <li>Braga</li>
+                    <li>Portimão</li>
+                    <li>Matosinhos</li>
+                    <li>Setúbal</li>
+                    <li>Albufeira</li>
+                    <li>Maia</li>
+                    <li>Loulé</li>
+                    <li>Gondomar</li>
+                    <li>Coimbra</li>
+                    <li>Mafra</li>
+                    <li>Leiria</li>
+                    <li>Barreiro</li>
+                    <li>Funchal</li>
+                    <li>Alenquer</li>
+                    <li>Vila Nova de Famalicão</li>
+                    <li>Faro</li>
+                    <li>Silves</li>
+                    <li>Montijo</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="footer_cima">
+                <div id="f1" class="col_footer">
+                    <div class="logo_footer">
+                        <img src="fundo/footer_logo.webp">
+                    </div>
+                    <div class="icons_social">
+                        <div class="social" id="facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </div>
+                        <div class="social" id="instagram">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <div class="social" id="linkedin">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div class="social" id="youtube">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                    </div>
+                </div>
+                <div id="f2" class="col_footer">
+                    <ul>
+                        <li><a href="#">A RE/MAX</a></li>
+                        <li><a href="#">A RE/MAX Internacional</a></li>
+                        <li><a href="#">A RE/MAX Europa</a></li>
+                        <li><a href="#">Contactos</a></li>
+                    </ul>
+                </div>
+                <div id="f3" class="col_footer">
+                    <ul>
+                        <li><a href="#">Seja um Agente</a></li>
+                        <li><a href="#">Franchising</a></li>
+                        <li><a href="#">Porquê RE/MAX?</a></li>
+                    </ul>
+                </div>
+                <div id="f4" class="col_footer">
+                    <ul>
+                        <li><a href="#">Empreendimentos</a></li>
+                        <li><a href="#">RE/MAX Collection</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer_baixo">
+                <div class="baixo_cont" id="baixo_esq">
+                    © RE/MAX 2021 Direitos Reservados
+                </div>
+                <div class="baixo_cont" id="baixo_dir">
+                    <a href="#">Politica Privacidade</a> | 
+                    <a href="#">Condições de uso</a> | 
+                    <a href="#">Acesso aos seus dados pessoais</a> | 
+                    <a href="#">Declaração de Privacidade</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
+    <script type="text/javascript" src="logica.js"></script>
+</body>
+</html>

@@ -1,0 +1,4003 @@
+$darken-white: darken(white, 8%);
+$azul_remax: #003aa8;
+$vermelho_remax: #df1828;
+$texto_preto: #212529;
+$text-font: "Nunito Sans", sans-serif;
+$header-font-size:15px;
+$text-size: 16px;
+$text-weight: 400;
+$content-width:940px;
+$header-height:67px;
+$footer-height:67px;
+
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+    color: $texto_preto;
+    font-family: $text-font;
+    font-size: $text-size;
+    font-weight: $text-weight;
+    text-align: left;
+    margin: 0;
+    border-top: 3px solid $vermelho_remax;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+a {
+
+    text-decoration: none;
+    color: $texto_preto;
+
+    &:hover {
+
+        cursor: pointer;
+        color: $azul_remax;
+    }
+}
+
+.arrow {
+    border: solid $texto_preto;
+    border-width: 0 0.5px 0.5px 0;
+    display: inline-block;
+    padding: 2.5px;
+    font-style: normal;
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+label {
+
+    height: 100%;
+    width: 100%;
+}
+
+li {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 0px;
+    padding-right: 0px;
+    height: 100%;
+    width: 100%;
+    list-style: none;
+}
+
+ul {
+
+    display: flex;
+    padding: 0px;
+    flex-direction: row;
+    list-style-type: none;
+    align-items: center;
+    margin: 0;
+    width: 100%;
+}
+
+.selec-pt {
+
+    background-color: $azul_remax;
+    color: white;
+
+    &:hover {
+
+        background-color: $azul_remax;
+        color: white;
+    }
+}
+
+.selec-en {
+
+    &:hover {
+
+        background-color: darken(white, 10%);
+    }
+}
+
+#menu-vert-esq {
+
+    display: none;
+
+    div {
+
+        display: none;
+    }
+}
+
+.wrapper {
+
+    margin: 0;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+
+    header {
+
+        background-color: white;
+        height: $header-height;
+        font-size: $header-font-size;
+        font-weight: 400;
+
+        #main-menu {
+
+            padding-right: 40px;
+            padding-left: 16px;
+            position: relative;
+            display: flex;
+            height: 70px;
+            width: auto;
+            margin-right: 5px;
+
+            #menu-vert {
+                display: none;
+            }
+
+            #menu-horiz {
+
+                i {
+
+                    font-size:11px;
+                    font-weight: lighter;
+                    color: $texto_preto;
+                }
+
+                display: flex;
+                height: 100%;
+                width: 100%;
+                align-items: center;
+                flex-direction: row;
+                position: relative;
+
+                li {
+
+                    .logo {
+                        width: 120px;
+                        height: 40px;
+                        object-fit: cover;
+                        padding-left: 0px;
+                    }
+                }
+
+                .botao {
+
+                    i {
+
+                        top: 32px;
+                        position: absolute;
+                    }
+                }
+
+                .menu-esq {
+
+                    .botao {
+
+                        padding: 0;
+                    }
+
+                    display: flex;
+                    height: 100%;
+                    align-items: center;
+                    margin-right: auto;
+                    flex-direction: row;
+                    position: relative;
+
+                    .posicao-logo {
+
+                        margin-right: 16px;
+                    }
+
+                    li {
+
+                        margin: 0;
+                        height: 100%;
+                        display: flex;
+                        height: 70px;
+                        width: auto;
+                        padding-left: 16px;
+
+                        #lingua {
+
+                            position: relative;
+                            display: inline-block;
+                            height: 67px;
+                            width: 105px;
+                            padding-left: 0;
+                            padding-right: 0;
+                            padding-top: 2px;
+                            z-index: 2;
+
+                            &:hover {
+
+                                cursor: pointer;
+                            }
+
+                            #selecao-linguagem {
+
+                                display: none;
+                                position: absolute;
+                                background-color: white;
+                                min-width: 160px;
+                                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                                z-index: 3;
+                                white-space: nowrap;
+                                cursor: pointer;
+                                background-color: white;
+                                flex-direction: column;
+                                top: 60px;
+
+                                a {
+
+                                    padding: 20px 16px;
+                                    text-decoration: none;
+                                    display: block;
+                                }
+                            }
+
+                            #linguagem {
+
+                                border: none;
+                                background-color: white;
+                                color: $texto_preto;
+                                font-size: $header-font-size;
+                                cursor: pointer;
+                                height: 100%;
+                                width: 100%;
+                                padding: 0;
+                                z-index: 3;
+                            }
+                        }
+
+                        a {
+
+                            height: 100%;
+                            width: 100%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+                    }
+                }
+
+                .menu-dir {
+
+                    .botao {
+
+                        padding: 0;
+                    }
+
+                    display: flex;
+                    height: 100%;
+                    align-items: center;
+                    margin-left: auto;
+                    flex-direction: row;
+                    position: relative;
+                    margin-left: auto;
+
+                    li {
+
+                        margin-right: 8px;
+                        height: 100%;
+                        display: flex;
+                        height: 70px;
+                        width: auto;
+                        padding: 5px 16px;
+
+                        &:hover {
+
+                            cursor: pointer;
+                            color: $azul_remax;
+                        }
+
+                        #login-entrar {
+
+                            .account {
+
+                                font-size: 24px;
+                                align-items: center;
+                                justify-content: center;
+                                display: flex;
+                                font-weight: 400;
+                                margin-right: 10px;
+
+                                i {
+
+                                    font-size: 24px;
+                                    -webkit-text-stroke: 1px white;
+                                }
+                            }
+
+                            &:hover {
+
+                                i {
+
+                                    color: $azul_remax;
+                                }
+                            }
+                        }
+
+                        #agencia {
+
+                            position: relative;
+                            display: inline-block;
+                            height: 67px;
+                            width: 105px;
+                            padding-left: 0;
+                            padding-right: 0;
+                            padding-top: 2px;
+
+                            &:hover {
+
+                                cursor: pointer;
+                                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                                padding-top: 2px;
+    
+                                #selecao-agencia {
+    
+                                    display: block;
+                                    cursor: pointer;
+                                    background-color: white;
+                                    display: flex;
+                                    flex-direction: column;
+                                    top: 60px;
+    
+                                    a {
+    
+                                        padding: 20px 16px;
+                                    }
+                                }
+    
+                                #botao-agencia {
+    
+                                    cursor: pointer;
+                                }
+                            }
+
+                            #selecao-agencia {
+
+                                display: none;
+                                position: absolute;
+                                background-color: white;
+                                min-width: 160px;
+                                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                                z-index: 1;
+                                white-space: nowrap;
+
+                                a {
+
+                                    padding: 12px 16px;
+                                    color: $texto_preto;
+                                    text-decoration: none;
+                                    display: block;
+
+                                    &:hover {
+
+                                        background-color: darken(white, 8%);
+                                    }
+                                }
+                            }
+
+                            #botao-agencia {
+
+                                border: none;
+                                background-color: white;
+                                color: $texto_preto;
+                                font-size: $header-font-size;
+                                cursor: pointer;
+                                height: 100%;
+                                width: 100%;
+                                padding: 0;
+
+                                &:hover {
+
+                                    cursor: pointer;
+                                    color: $azul_remax;
+                                }
+                            }
+                        }
+
+                        a {
+
+                            height: 100%;
+                            width: 100%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #imagem-search {
+
+
+        position: relative;
+        height: 66vh;
+        width: 100%;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+
+        &:before {
+
+            background-image: url(fundo/imagemsearch.webp);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            width: 100%;
+            height: 100%;
+            content: "";
+            display: block;
+            position: absolute;
+            filter: brightness(80%);
+        }
+
+        #ancora_VerMais {
+
+            position: fixed;
+            margin-bottom: 0;
+            top: 66vh;
+            align-self: center;
+            display: flex;
+            height: auto;
+            width: 100%;
+            background-color: transparent;
+            border: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size:15px;
+            z-index: 0;
+
+            i {
+
+                margin-bottom: 8px;
+                font-size: 24px;
+                font-weight: 700;
+            }
+
+            a {
+
+                color: white;
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+
+                i {
+
+                    align-items: center;
+                }
+            }
+        }
+
+        #is_com_t {
+
+            position: absolute;
+            top: 43%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 256px;
+            width: 55%;
+            display: flex;
+            justify-content: start;
+            flex-direction: column;
+            text-align: center;
+
+            h1 {
+
+                margin-bottom: 50px;
+                color: white;
+                font-size: 42px;
+                font-weight: 700;
+                letter-spacing: -.88px;
+                margin-bottom: 6.5vh;
+                text-align: left;
+            }
+
+            #search {
+
+                width: 100%;
+                margin-bottom: 32px;
+                color: $texto_preto;
+                display: flex;
+                flex-direction: column;
+
+                ul {
+
+                    display: flex;
+                    flex-direction: row;
+                    font-weight: 700;
+                    font-size:13px;
+                    width: auto;
+
+                    li {
+
+                        width: 141px;
+                        height: 50px;
+                        align-items: center;
+                        justify-content: center;
+                        display: flex;
+                        border-radius: 0;
+                        border: none;
+                        margin-bottom: 0;
+                        padding: 8px 16px;
+                        background-color: white;
+                    }
+
+                    #compra {
+
+                        border-top-left-radius: 5px;
+                        background-color: white;
+                        font-weight: 700;
+                    }
+
+                    #arrenda {
+
+                        border-top-right-radius: 5px;
+                        background-color: $darken-white;
+                        font-weight: 100;
+                    }
+                }
+
+                #caixapesquisa {
+
+                    display: flex;
+                    flex-direction: row;
+                    width: 100%;
+                    background-color: white;
+                    padding-right: 15px;
+                    padding-left: 15px;
+                    align-items: center;
+                    font-size: 16px;
+
+                    input[type=text] {
+
+                        font-size: 16px;
+                    }
+
+                    #pesquisa {
+
+                        height: 65px;
+                        border: none;
+                        outline: none;
+                        width: 100%;
+
+                        &::placeholder {
+
+                            font-size: 16px;
+                        }
+                    }
+
+                    #separador {
+
+                        margin-right: 0;
+                        position: relative;
+                        width: 1px;
+                        border-left: 1px solid #eceff2;
+                        height: 60%;
+                        padding-right: 15px;
+                    }
+
+                    #icon-pesquisa {
+
+                        padding: 1px 6px;
+                        height: auto;
+                        width: auto;
+                        justify-content: center;
+                        display: flex;
+                        align-items: center;
+                        border-radius: 0;
+                        font-size: 23px;
+                        border: none;
+                        background-color: white;
+
+                        i {
+
+                            -webkit-text-stroke: 2px white;
+                        }
+                    }
+                }
+
+            }
+        }
+
+    }
+
+    .corpo {
+
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+        margin: auto;
+        overflow: hidden;
+
+        #publicidade {
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            padding: 50px 1vw;
+            margin: auto;
+            margin-bottom: 0;
+            width: 100%;
+    
+            :first-child {
+    
+                margin-bottom: 32px;
+            }
+    
+            img {
+    
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: relative;
+                border-radius: 12px;
+                max-height: 210px;
+                max-width: 1200px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    
+        .mostra {
+    
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow-x: hidden;
+            width: 100%;
+            min-height: 100%;
+            margin-bottom: 50px;
+    
+            .info_agente {
+    
+                min-height: 44px;
+                max-width: 100%;
+                min-width: 100%;
+                padding: 6px 15px;
+                //texto
+                font-size:11px;
+                font-weight: 400;
+                margin-right: 15px;
+                margin-bottom: 0;
+                white-space: nowrap;
+                flex: 1 0;
+                display: flex;
+                align-items: center;
+    
+                span {
+    
+                    color: #747474;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                }
+    
+                .cidade {
+    
+                    font-size:11px;
+                    font-weight: 400;
+                    color: $texto_preto;
+                }
+    
+                img {
+                    
+                    min-width: 32px;
+                    min-height: 32px;
+                    max-width: 32px;
+                    max-height: 32px;
+                    margin-right: 0;
+                    margin-left: auto;
+                    border-radius: 10px;
+                }
+            }
+    
+            .info_casa {
+    
+                height: 13%;
+                width: 100%;
+                background-color: #dae4ea;
+                font-size:11px;
+                font-weight: 700;
+                padding: 11px 10px;
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+            }
+    
+            .controlos {
+    
+                margin-bottom: 16px;
+                padding: 0 10px;
+                justify-content: left;
+                align-items: center;
+                display: flex;
+                flex-direction: row;
+    
+                h1 {
+    
+                    font-size: 24px;
+                    font-weight: 700;
+                    margin-bottom: 0;
+                }
+    
+                .vertodos {
+    
+                    font-size:15px;
+                    font-weight: 700;
+                    color: $azul_remax;
+                    text-decoration: none;
+                    display: flex;
+                    height: 100%;
+                    width: auto;
+                    justify-content: left;
+                    align-items: flex-end;
+                    margin-left: 0;
+    
+                    a {
+    
+                        display: flex;
+                        
+    
+                        &:active, &:hover, &:visited, &:link {
+    
+                            color: $azul_remax;
+                        }
+                    }
+    
+                }
+    
+                &:last-child {
+    
+                    justify-content: right;
+                }
+    
+                .setas {
+    
+                    display: flex;
+                    margin-right: 0;
+                    margin-left: auto;
+                    height: 100%;
+                    color: #191c1f;
+    
+                    .seta_esquerda {
+    
+                    margin: 0 16px;
+    
+                    &:hover {
+    
+                        cursor: pointer;
+                    }
+                    }
+    
+                    .seta_direita {
+    
+                    margin: 0 16px;
+    
+                    &:hover {
+    
+                        cursor: pointer;
+                    }
+                    }
+                }
+            }
+    
+            .slideshow {
+    
+                display: flex;
+                flex-direction: row;
+                overflow-y: hidden;
+                overflow-x: hidden;
+                scroll-snap-type: x mandatory;
+                position: relative;
+    
+    
+                .slide {
+    
+                    display: flex;
+                    flex-direction: column;
+                    position: relative;
+                    justify-content: center;
+                    align-items: center;
+                    min-height: 100%;
+                    scroll-snap-align: start;
+                    font-size: 3.5ch;
+                    border-radius: 15px;
+                    overflow: hidden;
+                    
+                    &:hover {
+    
+                        cursor: pointer;
+    
+                        .foto_casa {
+    
+                            img {
+    
+                                width: 100%;
+                                max-height: 100%;
+                            }
+                        }
+                    }
+    
+                    .foto_casa {
+    
+                        height: 78%;
+                        width: 100%;
+                        position: relative;
+                        display: flex;
+                        overflow: hidden;
+                        justify-content: center;
+                        align-items: center;
+    
+                        img {
+    
+                            position: relative;
+                            object-fit: cover;
+                            display: flex;
+                        }
+                    }
+                }
+            }
+        }
+
+        #collection {
+
+            .info_casa {
+
+                background-color: $azul_remax;
+                color: white;
+            }
+        }
+
+        #empreendimentos {
+
+            .info_agente {
+
+                color: $azul_remax;
+                font-weight: 700;
+                font-size: 12px;
+            }
+
+            .info_casa {
+
+                background-color: $azul_remax;
+                color: white;
+            }
+        }
+    
+        #concelhos {
+    
+            display: flex;
+            flex-direction: column;
+            z-index: 2;
+    
+            h1 {
+    
+                font-weight: 700;
+                margin-right: auto;
+                z-index: 2;
+                background-color: white;
+                color: $texto_preto;
+            }
+    
+            .mostra_concelhos {
+    
+                display: flex;
+                flex-flow: row wrap;
+                width: 100%;
+                height: auto;
+                justify-content: center;
+    
+                .procura_concelho {
+    
+                    &:hover {
+    
+                        background-size: cover;
+                        cursor: pointer;
+    
+                        .cidade {
+                            
+                        font-size: 21px;
+                        }
+    
+                        .cidade_vermais {
+                            
+                        font-size: 16px;
+                        }
+                    }
+    
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    position: relative;
+                    color: white;
+                    overflow: hidden;
+                    border-radius: 15px;
+                    z-index: 2;
+    
+                    // BACKGROUND
+    
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    width: 100%;
+                    content: "";
+                    display: block;
+                    position: relative;
+                    //filter: brightness(60%);
+                    z-index: 1;
+                    overflow: hidden;
+    
+                    .cidade {
+    
+                        z-index: 3;
+                        position: relative;
+                        font-size: 18px;
+                        font-weight: 700;
+                        margin-left: 20px;
+                        margin-right: auto;
+                    }
+    
+                    .cidade_vermais {
+    
+                        z-index: 3;
+                        position: relative;
+                        display: flex;
+                        font-size:13px;
+                        font-weight: 700;
+                        margin-right: 20px;
+                        margin-left: auto;
+                    }
+                }
+    
+                #lisboa {
+    
+                    background-image: url('cidades/lisboa.webp');
+                    display: flex;
+                    flex-direction: row;
+                }
+    
+                #porto{
+    
+                    background-image: url('cidades/porto.webp');
+                    display: flex;
+                    flex-direction: row;
+                }
+    
+                #coimbra {
+                    
+                    background-image: url('cidades/coimbra.webp');
+                    display: flex;
+                    flex-direction: row;
+                }
+    
+                #braga {
+    
+                    background-image: url('cidades/braga.webp');
+                    display: flex;
+                    flex-direction: row;
+                }
+    
+                #faro {
+    
+                    background-image: url('cidades/faro.webp');
+                    display: flex;
+                    flex-direction: row;
+                }
+    
+                #leiria {
+    
+                    background-image: url('cidades/leiria.webp');
+                    display: flex;
+                    flex-direction: row;
+                }
+            }
+        }
+    }
+
+    .corpo2 {
+
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+        margin: auto;
+        overflow: hidden;
+        z-index: 2;
+        background-color: white;
+
+        #agentes {
+    
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            justify-content: center;
+            margin: auto;
+            
+    
+            .titulo_agentes {
+    
+                h4 {
+    
+                    font-weight: 700;
+                    width: auto;
+                    height: auto;
+                }
+            }
+    
+            .agentes_container {
+    
+                display: flex;
+                flex-flow: row wrap;
+                width: 100%;
+                max-width: 1200px;
+                height: 100%;
+    
+                .container_titulo_agentes {
+    
+                    word-break: break-word;
+                    position: relative;
+                    word-break: break-word;
+                    display: flex;
+    
+                    h1 {
+    
+                        width: 100%;
+                        height: auto;
+                        margin: 0;
+                        font-weight: 700;
+                        margin-right: 32px;
+                    }
+                }
+    
+                .agentes_texto {
+    
+                    font-weight: 400;
+                    line-height: 1.67;
+                    color: #54595e;
+                    word-break: break-word;
+                    margin-top: 5px;
+                    position: relative;
+                }
+    
+                .imagem_agentes {
+    
+                    background-image: url(fundo/fundo_pessoas.webp);
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    display: flex;
+                    width: 100%;
+                    content: "";
+                    position: relative;
+    
+                    .botoes_agentes {
+    
+                        display: flex;
+                        height: auto;
+    
+                        button {
+    
+                            border: none;
+                            font-weight: 700;
+                            text-align: center;
+                            border-radius: 5px;
+
+                            &:hover {
+
+                                cursor: pointer;
+                            }
+                        }
+    
+                        #encontrar_agente {
+    
+                            background-color: $azul_remax;
+                            color: white;
+
+                            &:hover {
+                
+                                background-color: darken($azul_remax, 10%);
+                            }
+                        }
+    
+                        #encontrar_agencia {
+    
+                            background-color: white;
+                            color: $texto_preto;
+
+                            &:hover {
+                
+                                background-color: darken(white, 10%);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    
+        #descobre_emp {
+    
+            display: flex;
+            justify-content: center;
+            align-self: center;
+            z-index: 2;
+            overflow: hidden;
+            background-color: #dae4ea;
+            border-radius: 20px;
+    
+            .empr_foto {
+    
+                margin-bottom: 0;
+                overflow: hidden;
+                text-align: left;
+                display: flex;
+                position: relative;
+                align-items: center;
+                justify-content: center;
+    
+                img {
+    
+                    object-fit: cover;
+                    display: flex;
+                    position: relative;
+                    height: 100%;
+                    width: 100%;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+    
+            .empr_cont {
+    
+                display: flex;
+                flex-direction: column;
+                justify-content: start;
+    
+                .empr_titulo {
+    
+                    h1 {
+    
+                        word-break: break-word;
+                        margin-right: 32px;
+                        color: $texto_preto;
+                        width: 100%;
+                    }
+                }
+    
+                button {
+    
+                    display: flex;
+                    align-items: center;
+                    height: 40px;
+                    font-weight: 700;
+                    text-align: center;
+                    padding: 13px 21px;
+                    border: 0;
+                    color: white;
+                    background-color: $azul_remax;
+                    border-radius: 4px;
+
+                    &:hover {
+        
+                        background-color: darken($azul_remax, 10%);
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+
+        #pesquisas {
+
+            display: flex;
+            flex-direction: column;
+            padding: 8vh 1vw;
+            padding-bottom: 0;
+
+            .pesquisas_barra {
+
+                width: 100%;
+                height: 64px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                border: 0;
+                border-radius: 12px;
+                background-color: #eceff2;
+                color: $texto_preto;
+                font-weight: 700;
+                padding: 8px 32px;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 13px;
+
+                &:hover {
+
+                    cursor: pointer;
+                }
+            }
+
+            .esconde_pesquisas {
+                
+                max-height: 160vh;
+
+                ul {
+
+                    display: none;
+                    flex-flow: row wrap;
+                    position: relative;
+                    width: 100%;
+                    height: auto;
+                    padding: 1em 0;
+                    padding-top: 0;
+
+                    li {
+
+                        width: auto;
+                        height: 44px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size:15px;
+                        color: $texto_preto;
+                        padding: 0 24px;
+                        text-decoration: none;
+                        border-radius: 12px;
+                        border: 1px solid $azul_remax;
+                        margin: 4px;
+
+                        &:hover {
+
+                            background-color: $azul_remax;
+                            color: white;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    footer {
+
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        justify-content: center;
+
+        .footer_cima {
+
+            display: flex;
+            position: relative;
+            width: 100%;
+            justify-content: center;
+
+            .col_footer {
+                
+                display: flex;
+                position: relative;
+                flex-direction: column;
+
+                .logo_footer {
+
+                    position: relative;
+                    display: flex;
+                }
+
+                .icons_social {
+
+                    display: flex;
+                    flex-direction: row;
+                    position: relative;
+
+                    .social {
+
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: .7px solid #54595e;
+                        border-radius: 50%;
+                        color: #4c555f;
+
+                        &:hover {
+
+                            background-color: $azul_remax;
+                            color: white;
+                            cursor: pointer;
+                        }
+                    }
+                }
+
+                ul {
+
+                    display: flex;
+                    position: relative;
+                    flex-direction: column;
+                    width: 100%;
+
+                    li {
+
+                        position: relative;
+                        display: flex;
+                        font-size:13px;
+                        font-weight: 700;
+                        font-stretch: normal;
+                        font-style: normal;
+                        line-height: normal;
+                        letter-spacing: normal;
+                        color: #4c555f;
+
+                        a {
+
+                            position: relative;
+                        }
+                    }
+                }
+            }
+        }
+
+        .footer_baixo {
+
+            display: flex;
+
+            .baixo_cont {
+
+                font-weight: 400;
+                line-height: 1.85;
+                color: #55595d;
+
+                a {
+
+                    font-size:13px;
+                    font-weight: 400;
+                    line-height: 1.85;
+                    color: #55595d;
+                }
+            }
+        }
+    }
+}
+
+#calcula {
+
+    position: fixed;
+    z-index: 5;
+    bottom: 0;
+    right: 0;
+    background-color: $vermelho_remax;
+    border-radius: 5px;
+    cursor: pointer;
+    max-width: 418px;
+    min-width: 370px;
+    display: flex;
+    flex-direction: column;
+    height: 45px;
+
+    #botao_calcula {
+        
+        display: flex;
+        flex-direction: row;
+        max-width: 418px;
+        min-width: 370px;
+
+        div {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            h1 {
+    
+                margin: 10px 0px;
+                font-weight: 700;
+                font-size: 25px;
+                padding-bottom: 10px;
+                text-align: center;
+                color: white;
+            }
+        }
+
+        .reset {
+
+            display: none;
+            min-width: 30%;
+            background-color: $azul_remax;
+        }
+
+        #simula {
+
+            display: none;
+            min-width: 50%;
+            margin-left: auto;
+            margin-right: 0;
+            background-color: $vermelho_remax;
+        }
+
+        #financiamento_botao {
+
+            display: flex;
+            min-width: 50%;
+            width: 100%;
+            margin-left: 0;
+            margin-right: auto;
+            background-color: $azul_remax;
+        }
+
+        #reset_fin {
+
+            background-color: $vermelho_remax;
+        }
+    }
+
+    .menu_aux {
+
+        height: 0;
+        width: 0;
+        display: none;
+        flex-direction: column;
+        position: relative;
+        overflow: hidden;
+
+        .calcula_form {
+        
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 202px;
+            margin: 0;
+            max-width: 100%;
+            position: relative;
+            background-color: white;
+            padding: 0;
+            margin-bottom: 50px;
+
+            .form_radio {
+
+                max-width: 100%;
+                display: flex;
+                flex-direction: row;
+                margin: auto 0;
+                margin-bottom: 20;
+                justify-content: center;
+                align-items: center;
+
+                .calcula_radio {
+
+                    max-width: 50%;
+                    height: auto;
+                    display: flex;
+                    flex-direction: row;
+                    margin: auto 0;
+                    justify-content: center;
+                    align-items: center;
+
+                    input:hover {
+
+                        cursor: pointer;
+                    }
+
+                    span {
+
+                        margin-left: 10px;
+                    }
+                }
+            }
+
+            .inputgrande[type='number'] {
+
+                text-align: right;
+                padding: 0;
+                padding-left: 80px;
+            }
+
+            #tipologia[type='number'] {
+
+                text-align: left;
+                padding: 0;
+                padding-right: 80px;
+            }
+
+            button {
+    
+                margin: 0;
+                padding: 0;
+                white-space: nowrap;
+                max-width: 100%;
+                height: 45px;
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                border: none;
+                background-color: $vermelho_remax;
+                color: white;
+                font-weight: 700;
+                font-size: 20px;
+                padding-bottom: 5px;
+
+                &:hover {
+
+                    cursor: pointer;
+                    color: $azul_remax;
+                }
+            }
+
+            input[type='number'] {
+
+                display: flex;
+                border: none;
+                width: 50%;
+                height: auto;
+                position: relative;
+                font-weight: 400;
+                font-size: 25px;
+
+                &:focus {
+
+                    outline: none;
+                }
+            }
+        }
+
+        form {
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            max-width: 100%;
+            position: relative;
+            margin: 0;
+            background-color: $vermelho_remax;
+
+            label {
+
+                text-align: center;
+                font-weight: 600;
+                font-size: 25px;
+                height: auto;
+                margin-top: 10px;
+                white-space: nowrap;
+            }
+
+            #tipologia_label {
+
+                padding-top: 45px;
+            }
+
+            .calcula_form_input {
+
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                margin: auto 0;
+                align-items: center;
+
+                span {
+
+                    font-weight: 400;
+                    font-size: 25px;
+                    padding-right: 2px;
+                    padding-left: 5px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: right;
+                    width: 50%;
+                    position: relative;
+                }
+
+                .spanesquerda {
+
+                    display: flex;
+                    justify-content: left;
+                    padding-right: 5px;
+                    padding-left: 2px;
+                    white-space: nowrap;
+                }
+            }
+        }
+
+        .zonas_do_pais {
+
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-height: 100%;
+            min-height: 202px;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: white;
+
+            .zonas {
+
+                display: flex;
+                width: 100%;
+                height: 33.333%;
+                font-size: 35px;
+                font-weight: 700;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                flex-direction: row;
+                background-color: $azul_remax;
+                color: white;
+
+                &:hover {
+
+                    background-color: white;
+                    color: $azul_remax;
+
+                    .mostra_zona {
+
+                        width: 12.5%;
+                        padding: 2px 0;
+                    }
+
+                    .detalhes {
+
+                        width: 87.5%;
+                        position: relative;
+                        flex-direction: column;
+
+                        .total_euros {
+
+                            font-size: 28px;
+                            font-weight: 600;
+                        }
+
+                        .info_detalhes {
+
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: center;
+                            margin: 5px;
+                            max-width: 100%;
+
+                            span {
+
+                                width: auto;
+                                padding: 1px;
+                            }
+
+                            i {
+
+                                padding: 2px;
+                            }
+
+                            div {
+
+                                width: 100%;
+                                display: flex;
+                                flex-direction: row;
+                                white-space: nowrap;
+                                align-items: center;
+                                justify-content: center;
+
+                                .detalhes_esq {
+    
+                                    margin-left: 0;
+                                    margin-right: auto;
+                                    padding-left: 0;
+                                    text-align: left;
+                                    display: flex;
+                                    max-width: 33.333%;
+
+                                    span {
+
+                                        text-align: left;
+                                    }
+                                }
+    
+                                .detalhes_centro {
+    
+                                    margin-left: auto;
+                                    margin-right: auto;
+                                    max-width: 33.333%;
+
+                                    span {
+
+                                        text-align: center;
+                                    }
+                                }
+    
+                                .detalhes_dir {
+    
+                                    margin-left: auto;
+                                    margin-right: 0;
+                                    max-width: 33.333%;
+
+                                    span {
+
+                                        text-align: right;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .mostra_zona {
+
+                    padding-right: 10px;
+                }
+
+                .detalhes {
+
+                    display: flex;
+
+
+                    .info_detalhes {
+
+                        display: none;
+                    }
+
+                    .preco_final {
+
+                        display: flex;
+                        min-width: 50%;
+                        font-size: 25px;
+                        font-weight: 500;
+                        padding-left: 10px;
+                    }
+                }
+            }
+
+            #norte {
+                
+                border-bottom: 2px solid white;
+            }
+
+            #centro {
+                
+                border-bottom: 2px solid white;
+            }
+        }
+
+        #financiamento {
+
+            margin-top: 300px;
+            height: 201.1px;
+
+            .financiamento_sub {
+
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                max-width: 100%;
+                height: 201.1px;
+                position: relative;
+                margin: 0;
+    
+                .escolhe_tipo_op {
+    
+                    display: flex;
+                    flex-direction: row;
+                    margin: auto 20px;
+                    justify-content: center;
+                    padding: 15px 0;
+                    max-width: 100%;
+                    max-height: 100%;
+                    background-color: $azul_remax;
+                    color: white;
+                    font-size: 28px;
+                    font-weight: 600;
+                    border-radius: 20px;
+    
+                    &:hover {
+    
+                        background-color: darken( $azul_remax, 10% );
+                    }
+                }
+
+                #escolhe_com {
+
+                    margin-top: 30px;
+                    margin-bottom: auto;
+                }
+
+                #escolhe_sem {
+
+                    margin-bottom: 30px;
+                    margin-top: auto;
+                }
+            }
+
+            .emprestimos_ops {
+
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                max-height: 100%;
+                height: 202px;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                background-color: white;
+    
+                .emprestimo {
+    
+                    display: flex;
+                    width: 100%;
+                    max-height: 33.333%;
+                    min-height: 33.333%;
+                    font-size: 35px;
+                    font-weight: 700;
+                    align-items: center;
+                    text-align: center;
+                    flex-direction: row;
+                    background-color: $azul_remax;
+                    color: white;
+                    margin: 0;
+                    position: relative;
+
+                    .imagem_banco {
+ 
+                        width: 12.5%;
+                        height: 100%;
+                        margin: 0;
+                        margin-right: 10px;
+                        padding-left: 0;
+                        background-color: white;
+
+                        img {
+
+                            width: 100%;
+                            height: 100%;
+                            object-fit: contain;
+                        }
+                    }
+    
+                    .info_emprestimo {
+    
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: flex-start;
+                        min-width: 87%;
+                        min-height: 100%;
+                        font-size: 12px;
+                        font-weight: 300;
+                        white-space: nowrap;
+                        padding: 5px 0;
+
+                        .emprestimo_valores {
+                            
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-evenly;
+                            align-items: flex-end;
+                            min-width: 100%;
+                            margin: 0;
+                            margin-top: auto;
+                        }
+
+                        .nome_banco {
+
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: start;
+                            align-items: flex-start;
+                            margin: auto;
+                            margin-top: 0;
+                            margin-left: 0;
+                            width: 27%;
+                        }
+    
+    
+                        .desde {
+    
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: flex-start;
+                            align-items: center;
+                            width: auto;
+                            margin: auto;
+
+                            .mostra_desde {
+                                
+                                font-size: 12px;
+                                font-weight: 500;
+                            }
+
+                            .desde_texto {
+                                
+                                font-size: 9px;
+                                font-weight: 200;
+                            }
+
+                            .mensalidade_final_valor {
+
+                                font-size: 12px;
+                                font-weight: 700;
+                                color: $vermelho_remax;
+                            }
+                        }
+                        
+                        .ver_oferta {
+
+                            width: auto;
+                            height: 100%;
+                            margin-right: 10px;
+                            text-align: center;
+                            display: flex;
+                            justify-content: flex-start;
+                            align-items: center;
+                            min-width: 13%;
+
+                            a {
+                                
+                                color: $vermelho_remax;
+                                display: flex;
+                                justify-content: center;
+                                margin-bottom: 10px;
+                                font-weight: 700;
+                            }
+                        }
+                    }
+                }
+
+                #emprestimo2 {
+
+                    background-color: white;
+                    color: $azul_remax;
+                }
+            }
+
+            .slider_anos {
+
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+
+                .info_anos {
+
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    width: 50%;
+                }
+
+                .inputgrande {
+
+                    max-width: 45%;
+                }
+
+                .spanesquerda {
+
+                    width: 100%;
+                    font-size: 20px;
+                    padding-left: 80px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 990px) {
+
+    body {
+
+        border-top: none;
+    }
+
+    .wrapper {
+
+        grid-gap: 0;
+        width: 100%;
+
+        #imagem-search {
+
+            &:before {
+
+                background-image: url(fundo/imagemsearch2.webp);
+                height: 69vh;
+            }
+
+            #ancora_VerMais {
+
+                font-size:13px;
+            }
+
+            #is_com_t {
+
+                width: 60%;
+                top: 33vh;
+                padding: 32px 13px;
+
+                h1 {
+
+                    font-size: 24px;
+                    margin-bottom: 24px;
+                    letter-spacing: -.88px;
+                }
+
+                #search {
+
+                    ul {
+
+                        li {
+
+                            font-size:13px;
+                            width: 92px;
+                            height: 52px;
+                        }
+                    }
+
+                    #caixapesquisa {
+
+                        #pesquisa {
+
+                            height: 52px;
+                            padding-left: 0;
+                            font-size:13px;
+
+                            &::placeholder {
+
+                                font-size:13px;
+                            }
+
+                            input[type=next] {
+
+                                font-size:13px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        header {
+
+            height: 46px;
+            font-size:11px;
+            width: 100%;
+            min-width: none;
+
+            #main-menu {
+
+                padding-right: 15px;
+                padding-left: 10px;
+                position: relative;
+                display: flex;
+                height: 46px;
+                width: auto;
+                margin-right: 5px;
+
+                #menu-horiz {
+                    display: none;
+                }
+
+                #menu-vert {
+
+                    display: flex;
+                    height: 100%;
+                    width: 100%;
+                    align-items: center;
+                    flex-direction: row;
+                    position: relative;
+                    font-size: $header-font-size;
+
+                    li {
+
+                        height: 46px;
+                        margin-top: 0;
+                        padding-top: 0;
+                        padding-bottom: 0;
+                        align-items: center;
+
+                        &:hover {
+
+                            cursor: pointer;
+
+                            a {
+
+                                color: $azul_remax;
+                            }
+                        }
+                    }
+
+                    a {
+
+                        height: 100%;
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                    }
+
+                    .menu-esq {
+
+                        display: flex;
+                        height: 100%;
+                        align-items: center;
+                        margin-right: auto;
+                        flex-direction: row;
+                        position: relative;
+                        white-space: nowrap;
+
+
+                        li {
+
+                            margin: 0;
+                            height: 100%;
+                            display: flex;
+                            height: 46px;
+                            width: auto;
+                            justify-content: center;
+                            padding-right: 10px;
+
+                            label {
+
+                                height: 100%;
+                                width: 100%;
+                                display: flex;
+                                align-items: center;
+                                font-size:17.6px;
+
+                                &:hover {
+
+                                    cursor: pointer;
+                                }
+                            }
+
+                            .logo {
+                                width: 60px;
+                                height: 20px;
+                                object-fit: cover;
+                                padding-left: 0px;
+                            }
+                        }
+                    }
+
+                    .menu-dir {
+
+                        display: flex;
+                        height: 100%;
+                        align-items: center;
+                        margin-left: auto;
+                        flex-direction: row;
+                        position: relative;
+                        margin-left: auto;
+
+                        .account {
+
+                            font-size: 20px;
+                            margin-right: 10px;
+                            align-items: center;
+                            justify-content: center;
+                            display: flex;
+                            font-weight: 400;
+
+                            i {
+
+                                -webkit-text-stroke: 1px white;
+                            }
+
+                            &:hover {
+
+                                color: $azul_remax;
+                            }
+                        }
+
+                        li {
+
+                            margin-right: 0px;
+                            display: flex;
+                            height: 46px;
+                            width: auto;
+                            padding: 5px 16px;
+
+                            a {
+
+                                height: 46px;
+                                width: 100%;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                            }
+                        }
+                    }
+
+                    ul {
+
+                        display: flex;
+                        padding: 0px;
+                        flex-direction: row;
+                        list-style-type: none;
+                        align-items: center;
+                        margin: 0;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        #publicidade {
+
+            margin-bottom: 0;
+            width: 100%;
+
+            img {
+
+                max-width: 970px;
+                max-height: 170px;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .mostra {
+
+            padding: 32px 0;
+        }
+    }
+
+    #menu-vert-esq {
+
+        margin: 0;
+        padding: 0 16px;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        height: auto;
+        width: 320px;
+        position: absolute;
+        background-color: white;
+        z-index: 5;
+        display: none;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        flex-direction: column;
+        overflow: auto;
+
+        #menu-baixo {
+
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 16px;
+            margin-top: auto;
+            z-index: 1;
+            position: relative;
+
+            #registar {
+
+                background-color: white;
+                color: $texto_preto;
+
+                &:hover {
+
+                    background-color: darken(white, 10%);
+                }
+            }
+
+            #entrar {
+
+                background-color: $azul_remax;
+                color: white;
+
+                &:hover {
+
+                    background-color: darken($azul_remax, 10%);
+                }
+            }
+
+            button {
+
+                padding: 6px 12px;
+                margin-bottom: 8px;
+                font-size:13px;
+                font-weight: 700;
+                text-align: center;
+                border-radius: 6px;
+                height: 37px;
+                width: 100%;
+                border: none;
+
+                &:hover {
+
+                    cursor: pointer;
+                }
+            }
+        }
+
+        i {
+
+            top: 12px;
+            position: absolute;
+            font-size: 11px;
+            font-weight: lighter;
+            color: $texto_preto;
+        }
+
+        #menu-lateral {
+
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            left: 0;
+            margin-top: 15vh;
+            padding: 8px 0;
+            margin-bottom: auto;
+            font-size: $header-font-size;
+            height: auto;
+
+            ul {
+
+                display: flex;
+                flex-direction: column;
+                
+                li {
+
+                    margin-bottom: 24px;
+
+                    &:hover {
+
+                        color: $azul_remax;
+                    }
+                }
+            }
+
+            #botao-lateral {
+
+                margin-top: 0;
+                z-index: 2;
+
+                #agencia-lateral {
+
+                    position: relative;
+                    display: inline-block;
+                    height: auto;
+                    width: auto;
+                    padding-left: 0;
+                    padding-right: 0;
+                    padding-top: 2px;
+
+                    i {
+
+                        top: 5px;
+                    }
+
+                    &:hover {
+
+                        cursor: pointer;
+                        padding-top: 2px;
+                    }
+
+                    #selecao-agencia-lateral {
+
+                        display: none;
+                        position: relative;
+                        background-color: white;
+                        min-width: 160px;
+                        z-index: 1;
+                        white-space: nowrap;
+                        flex-direction: column;
+                        padding: 32px 20px;
+                        top: 4px;
+                        height: auto;
+
+                        a {
+
+                            margin-bottom: 24px;
+                            font-size: $header-font-size;
+                            color: $texto_preto;
+                            text-decoration: none;
+                            display: block;
+
+                            &:hover {
+
+                                color: $azul_remax;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        nav {
+
+            width: 100%;
+            height: 52px;
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            padding: 8px 0;
+
+            ul {
+
+                flex-direction: row;
+                height: 100%;
+                width: 100%;
+            }
+
+            #m-esq {
+
+                display: flex;
+                flex-direction: row;
+                height: 100%;
+                width: 100%;
+
+                #seta {
+
+                    padding-left: 0;
+                    padding-top: 1px;
+                    padding-bottom: 1px;
+                    padding-right: 6px;
+                    margin-right: 16px;
+                    font-size:15px;
+                    font-style: normal;
+                    height: 100%;
+                    width: auto;
+                    justify-content: start;
+
+                    &:hover {
+
+                        cursor: pointer;
+                        color: $azul_remax;
+                    }
+                }
+
+                .logo {
+
+                    width: 60px;
+                    height: 20px;
+                    object-fit: cover;
+                    padding-left: 0px;
+                }
+            }
+
+            #m-dir {
+
+                display: flex;
+
+                li {
+
+                    margin-left: auto;
+                    height: auto;
+                }
+            }
+
+            .botao {
+
+                height: 100%;
+                width: 100%;
+            }
+
+            li {
+
+                margin: 0;
+                height: 100%;
+                display: flex;
+                width: auto;
+
+                #lingua-vert {
+
+                    position: relative;
+                    display: inline-block;
+                    height: 100%;
+                    width: 100%;
+                    padding: 8px 30px;
+                    padding-right: 25px;
+                    padding-left: 17px;
+
+                    #selecao-linguagem-vert {
+
+                        display: none;
+                        position: absolute;
+                        background-color: white;
+                        width: auto;
+                        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                        z-index: 1;
+                        white-space: nowrap;
+                        flex-direction: column;
+                        top: 36px;
+
+                        a {
+
+                            text-decoration: none;
+                            display: block;
+                            padding: 12.8px 16px;
+                            font-size:13px;
+                        }
+                    }
+
+                    #linguagem-vert {
+
+                        border: none;
+                        background-color: white;
+                        color: $texto_preto;
+                        font-size:13px;
+                        ;
+                        cursor: pointer;
+                        height: 100%;
+                        width: 100%;
+                        padding: 0;
+                        white-space: nowrap;
+                    }
+                }
+
+                a {
+
+                    height: 100%;
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+}
+
+@media screen and ( min-width: 1200px ) {
+
+    body {
+
+        border-bottom: 12px solid $azul_remax;
+
+        .corpo {
+            
+            max-width: 1200px;
+    
+            .mostra {
+    
+                padding: .5vh 1vw;
+    
+                .controlos {
+        
+                    .setas {
+        
+                    font-size: 26px;
+                    }
+        
+                    .vertodos {
+        
+                        display: flex;
+                        position: relative;
+                        margin-bottom: 2px;
+                        margin-top: auto;
+                        
+                        a {
+        
+                            margin-left: 32px;
+                            margin-bottom: 1.6px;
+                        }
+                    }
+        
+                    div {
+        
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                }
+        
+                .slideshow {
+        
+                    height: 250px;
+            
+                    .slide{
+            
+                        min-width: calc( ( ( 100% - 60px ) / 8 ) * 2 );
+                        width: calc( ( ( 100% - 60px ) / 8 ) * 2 );
+                        max-width: calc( ( ( 100% - 60px ) / 8 ) * 2 );
+                        margin: 0 10px;
+    
+                        .foto_casa {
+    
+                            img {
+    
+                                height: 110%;
+                                width: 110%;
+                            }
+                        }
+                    }
+    
+                    .ultimo_slide {
+        
+                        margin-right: 0;
+                    }
+                }
+            }
+        
+            #concelhos {
+        
+                padding: .5vh 1vw;
+                padding-bottom: 0;
+                margin: auto;
+                justify-content: center;
+                width: 100%;
+        
+                .titulo_concelhos {
+                    
+                    align-self: flex-start;
+                    
+                    h1 {
+        
+                        font-size: 24px;
+                        margin-top: 0;
+                        margin-bottom: 24px;
+                        margin-left: .3vw;
+                    }
+                }
+        
+                .mostra_concelhos {
+                    
+                    width: 100%;
+                    align-self: center;
+        
+                    .procura_concelho {
+            
+                        max-width: calc( ( 100% - 1.8vw ) / 3 );
+                        margin: .5vh .3vw;
+                        height: 100px;
+                        background-size: 130%;
+                    }
+                }
+            }
+        }
+    
+        .corpo2 {
+            
+            max-width: 1200px;
+    
+            #agentes {
+        
+                padding: 8vh 1vw;
+                padding-bottom: 0;
+        
+                .titulo_agentes {
+        
+                    h4 {
+        
+                        font-size:15px;
+                        color: #4c555f;
+                    }
+                }
+        
+                .agentes_container {
+        
+                    .imagem_agentes {
+        
+                        height: 320px;
+                        margin-top: 30px;
+                        border-radius: 15px;
+                        max-height: 320px;
+                        object-fit: cover;
+                        background-size: auto;
+        
+                        .botoes_agentes {
+        
+                            margin-right: 25px;
+                            margin-bottom: 25px;
+                            margin-top: auto;
+                            margin-left: auto;
+                            border-radius: 15px;
+                            flex-direction: row;
+        
+                            button {
+        
+                                margin: 0 .5vw;
+                                padding: 13px 21px;
+                                font-size: 14.5px;
+                            }
+                        }
+                    }
+        
+                    .container_titulo_agentes {
+                        
+                        width: 45%;
+        
+                        h1 {
+        
+                            color: $texto_preto;
+                            font-size: 29px;
+                        }
+                    }
+        
+                    .agentes_texto {
+        
+                        width: 55%;
+                        font-size:15px;
+                    }
+                }
+            }
+        
+            #descobre_emp {
+        
+                display: flex;
+                flex-direction: row;
+                position: relative;
+                justify-content: center;
+                margin: 8vh 1vw;
+                margin-bottom: 0;
+        
+                .empr_foto {
+                    
+                    max-height: 416px;
+                    padding-right: 80px;
+        
+                    img {
+                        
+                        border-left: 20px;
+                    }
+                }
+        
+                .empr_cont {
+        
+                    margin: auto;
+                    height: 100%;
+                    width: 100%;
+        
+                    .empr_titulo {
+        
+                        h1 {
+        
+                            font-size: 36px;
+                            font-weight: 700;
+                            margin-top: 0;
+                            margin-right: auto;
+                            margin-left: 0;
+                        }
+                    }
+        
+                    .empr_texto {
+        
+                        font-size:15px;
+                        font-weight: 400;
+                        line-height: 2;
+                        margin-top: 5px;
+                        margin-bottom: 16px;
+                    }
+    
+                    button {
+                        
+                        font-size:15px;
+                        margin: auto;
+                        margin-left: 0;
+                        width: auto;
+                    }
+                }
+            }
+    
+            #pesquisas {
+
+                margin-bottom: 8vh;
+    
+                h1 {
+                    
+                    font-size: 24px;
+                    margin-bottom: 40px;
+                }
+    
+                .pesquisas_barra {
+                
+                    font-size: 18px;
+        
+                    .pesquisas_texto {
+        
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+        
+        footer {
+            
+            margin-bottom: 0;
+            padding: 0 1vw;
+            padding-bottom: 4vh;
+            border-top: .7px solid #dae4ea;
+    
+            .footer_cima {
+    
+                flex-direction: row;
+                justify-content: center;
+                margin: auto;
+                max-width: 1200px;
+    
+                .col_footer {
+
+                    justify-content: flex-start;
+                    width: 25%;
+                    max-width: 25%;
+                    margin-top: 5vh;
+    
+                    .logo_footer {
+    
+                        margin: 0 0 16px;
+                        justify-content: center;
+    
+                        img {
+    
+                            height: 38px;
+                            margin-right: 10px;
+                        }
+                    }
+    
+                    .icons_social {
+                        
+                        justify-content: center;
+    
+                        .social {
+    
+                            width: 34px;
+                            height: 34px;
+                            font-size:13px;
+                            margin-right: 13px;
+                        }
+                    }
+    
+                    ul {
+    
+                        flex-direction: column;
+                        margin-left: 0;
+                        margin-top: 0;
+                        display: flex;
+                        justify-content: center;
+                        width: 100%;
+                        max-width: 100%;
+
+                        li {
+
+                            margin-bottom: 10px;
+                            margin-right: 0;
+                            width: 100%;
+                            height: 100%;
+                            display: flex;
+                            justify-content: center;
+                            max-width: 100%;
+                        }
+                    }
+                }
+            }
+    
+            .footer_baixo {
+
+                flex-direction: row;
+                margin: 7vh auto;
+                padding: 0 1vw;
+                margin-bottom: 0;
+                max-width: 1200px;
+                width: 100%;
+    
+                .baixo_cont {
+    
+                    font-size:13px;
+                }
+
+                #baixo_esq {
+
+                    margin-left: 0;
+                    margin-right: auto;
+                }
+
+                #baixo_dir {
+
+                    margin-right: 0;
+                    margin-left: auto;
+                }
+            }
+        }
+    }
+}
+
+@media screen and ( min-width: 990px ) and ( max-width: 1199px ) {
+
+    body {
+
+        border-bottom: 12px solid $azul_remax;
+    
+        .corpo {
+            
+            max-width: 990px;
+    
+            .mostra {
+    
+                padding: .5vh 1vw;
+    
+                .controlos {
+        
+                    .setas {
+            
+                    font-size: 26px;
+                    }
+        
+                    .vertodos {
+        
+                        display: flex;
+                        position: relative;
+                        margin-bottom: 2px;
+                        margin-top: auto;
+                        
+                        a {
+        
+                            margin-left: 32px;
+                            margin-bottom: 1.6px;
+                        }
+                    }
+        
+                    div {
+        
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                }
+            
+                .slideshow {
+            
+                    max-height: 45vh;
+                    height: 30vh;
+            
+                    .slide{
+                
+                        min-width: calc( ( ( 100% - 40px ) / 8 ) * ( 8 / 3 ) );
+                        width: calc( ( ( 100% - 40px ) / 8 ) * ( 8 / 3 ) );
+                        max-width: calc( ( ( 100% - 40px ) / 8 ) * ( 8 / 3 ) );
+                        margin: 0 10px;
+        
+                        .foto_casa {
+        
+                            img {
+        
+                                height: 140%;
+                                width: 140%;
+                            }
+                        }
+                    }
+    
+                    .ultimo_slide {
+        
+                        margin-right: 0;
+                    }
+                }
+            }
+        
+            #concelhos {
+        
+                padding: .5vh 1vw;
+                padding-bottom: 0;
+                margin: auto;
+                justify-content: center;
+                width: 100%;
+        
+                h1 {
+        
+                    font-size: 24px;
+                    padding: 0 10px;
+                    margin-left: 1.5vw;
+                    margin-top: 0;
+                    margin-bottom: 24px;
+                }
+        
+                .mostra_concelhos {
+                    
+                    width: 100%;
+                    align-self: center;
+        
+                    .procura_concelho {
+            
+                        max-width: calc( ( 100% - 1.8vw ) / 3 );
+                        margin: .5vh .3vw;
+                        height: 100px;
+                        background-size: 130%;
+                    }
+                }
+            }
+        }
+    
+        .corpo2 {
+            
+            max-width: 990px;
+            
+            #agentes {
+        
+                padding: 8vh 1vw;
+                padding-bottom: 0;
+        
+                .titulo_agentes {
+        
+                    h4 {
+        
+                        font-size:15px;
+                        color: #4c555f;
+                    }
+                }
+        
+                .agentes_container {
+        
+                    .imagem_agentes {
+        
+                        height: 320px;
+                        margin-top: 30px;
+                        border-radius: 15px;
+                        max-height: 320px;
+                        max-width: 1200px;
+                        background-size: auto;
+                        
+        
+                        .botoes_agentes {
+        
+                            margin-right: 25px;
+                            margin-bottom: 25px;
+                            margin-top: auto;
+                            margin-left: auto;
+                            border-radius: 15px;
+                            flex-direction: row;
+        
+                            button {
+        
+                                margin: 0 .5vw;
+                                padding: 13px 21px;
+                                font-size: 14.5px;
+                            }
+                        }
+                    }
+        
+                    .container_titulo_agentes {
+                        
+                        width: 45%;
+                        flex-flow: row wrap;
+        
+                        h1 {
+        
+                            color: $texto_preto;
+                            font-size: 29px;
+                        }
+                    }
+        
+                    .agentes_texto {
+        
+                        width: 55%;
+                        font-size:15px;
+                    }
+                }
+            }
+        
+            #descobre_emp {
+        
+                margin: 8vh 1vw;
+                margin-bottom: 0;
+                flex-direction: row;
+        
+                .empr_foto {
+                    
+                max-height: 416px;
+                padding-right: 80px;
+                }
+        
+                .empr_cont {
+        
+                    margin: auto;
+        
+                    .empr_titulo {
+        
+                        h1 {
+        
+                            font-size: 36px;
+                            font-weight: 700;
+                            margin-top: 0;
+                            margin-right: auto;
+                            margin-left: 0;
+                        }
+                    }
+        
+                    .empr_texto {
+        
+                        font-size:15px;
+                        font-weight: 400;
+                        line-height: 2;
+                        margin-top: 5px;
+                        margin-bottom: 16px;
+                    }
+                }
+    
+                button {
+                    
+                    font-size:15px;
+                    margin: auto;
+                    margin-left: 0;
+                    width: auto;
+                }
+            }
+    
+            #pesquisas {
+
+                margin-bottom: 8vh;
+    
+                h1 {
+                    
+                    font-size: 24px;
+                    margin-bottom: 40px;
+                }
+    
+                .pesquisas_barra {
+                    
+                    font-size: 18px;
+        
+                    .pesquisas_texto {
+        
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+        
+        footer {
+            
+            margin-bottom: 0;
+            padding: 0 1vw;
+            padding-bottom: 4vh;
+            border-top: .7px solid #dae4ea;
+    
+            .footer_cima {
+    
+                flex-direction: row;
+                justify-content: center;
+                margin: auto;
+                max-width: 1200px;
+    
+                .col_footer {
+
+                    justify-content: flex-start;
+                    width: 25%;
+                    max-width: 25%;
+                    margin-top: 5vh;
+    
+                    .logo_footer {
+    
+                        margin: 0 0 16px;
+                        justify-content: center;
+    
+                        img {
+    
+                            height: 38px;
+                            margin-right: 10px;
+                        }
+                    }
+    
+                    .icons_social {
+                        
+                        justify-content: center;
+    
+                        .social {
+    
+                            width: 34px;
+                            height: 34px;
+                            font-size:13px;
+                            margin-right: 13px;
+                        }
+                    }
+    
+                    ul {
+    
+                        flex-direction: column;
+                        margin-left: 0;
+                        margin-top: 0;
+                        display: flex;
+                        justify-content: center;
+                        width: 100%;
+                        max-width: 100%;
+
+                        li {
+
+                            margin-bottom: 10px;
+                            margin-right: 0;
+                            width: 100%;
+                            height: 100%;
+                            display: flex;
+                            justify-content: center;
+                            max-width: 100%;
+                        }
+                    }
+                }
+            }
+    
+            .footer_baixo {
+
+                flex-direction: row;
+                margin: 7vh auto;
+                padding: 0 1vw;
+                margin-bottom: 0;
+                max-width: 1200px;
+                width: 100%;
+    
+                .baixo_cont {
+    
+                    font-size:13px;
+                }
+
+                #baixo_esq {
+
+                    margin-left: 0;
+                    margin-right: auto;
+                }
+
+                #baixo_dir {
+
+                    margin-right: 0;
+                    margin-left: auto;
+                }
+            }
+        }
+    }
+}
+
+@media screen and ( min-width: 705px ) and ( max-width:989px ) {
+
+    .corpo {
+
+        max-width: 650px;
+
+        .mostra {
+
+            padding: .5vh 1vw;
+
+            .controlos {
+    
+                .vertodos {
+                    
+                    order: 3;
+                    display: flex;
+                    align-items: center;
+                    
+                    a {
+    
+                        font-size:13px;
+                        font-weight: 600;
+                        margin-left: 3px;
+                        margin-bottom: 0;
+                    }
+                }
+        
+                .setas {
+        
+                    order: 2;
+                    font-size: 12.8px;
+                    display: flex;
+                    align-items: flex-end;
+                    margin-bottom: 1px;
+    
+                    i {
+    
+                        display: flex;
+                        margin-bottom: 0;
+                    }
+                }
+        
+                .titulo_mostra {
+        
+                    order: 1;
+                    
+                    h1 {
+    
+                        font-size:15px;
+                    }
+                }
+    
+                div {
+    
+                    display: flex;
+                    align-items: flex-end;
+                    justify-content: center;
+                }
+            }
+            
+            .slideshow {
+        
+                max-height: 50vh;
+                height: 25vh;
+        
+                .slide{
+            
+                    min-width: calc( ( ( 100% - 20px ) / 8 ) * ( 8 / 2 ) );
+                    width: calc( ( ( 100% - 20px ) / 8 ) * ( 8 / 2 ) );
+                    max-width: calc( ( ( 100% - 20px ) / 8 ) * ( 8 / 2 ) );
+                    margin: 0 10px;
+    
+                    .foto_casa {
+    
+                        img {
+    
+                            height: 140%;
+                            width: 140%;
+                        }
+                    }
+                }
+    
+                .ultimo_slide {
+    
+                    margin-right: 0;
+                }
+            }
+        }
+    
+        #concelhos {
+    
+            padding: .5vh 1vw;
+            padding-bottom: 0;
+            margin: auto;
+            justify-content: center;
+            width: 100%;
+    
+            h1 {
+    
+                font-size: 24px;
+                padding: 0 13px;
+                margin-bottom: 32px;
+                margin-left: 1.5vw;
+                text-align: center;
+            }
+    
+            .mostra_concelhos {
+    
+                width: 100%;
+                align-self: center;
+    
+                .procura_concelho {
+        
+                    max-width: calc( ( 100% - 1.8vw ) / 2 );
+                    margin: .5vh .3vw;
+                    height: 100px;
+                    background-size: 130%;
+                }
+            }
+        }
+    }
+
+    .corpo2 {
+
+        width: 100%;
+        max-width: 100%;
+        
+        #agentes {
+    
+            padding: 0;
+            width: 100%;
+            max-width: 100%;
+            overflow: hidden;
+    
+            .titulo_agentes {
+    
+                top: 360px;
+                position: relative;
+                z-index: 4;
+    
+                h4 {
+    
+                    font-size:13px;
+                    color: white;
+                    padding: 0 22.5px;
+                }
+            }
+    
+            .agentes_container {
+
+                width: 100%;
+    
+                .imagem_agentes {
+    
+                    height: 448px;
+                    background-size: cover;
+                    
+                    .botoes_agentes {
+    
+                        margin-right: auto;
+                        margin-bottom: 16px;
+                        margin-top: auto;
+                        margin-left: auto;
+                        border-radius: 15px;
+                        flex-direction: row;
+                        width: 100%;
+                        justify-content: start;
+                        padding: 0 13px;
+    
+                        button {
+    
+                            margin: 10px 15px;
+                            padding: 0;
+                            white-space: nowrap;
+                            font-size:13px;
+                            margin-right: 0;
+                            width: 48%;
+                            height: 40px;
+                        }
+                    }
+                }
+    
+                .container_titulo_agentes {
+    
+                    top: 350px;
+                    z-index: 4;
+                    width: 100%;
+    
+                    h1 {
+    
+                        color: white;
+                        padding: 0 22.5px;
+                        font-size: 24px;
+                        width: 100%;
+                    }
+                }
+    
+                .agentes_texto {
+    
+                    order: 3;
+                    width: 100%;
+                    padding: 32px 13px 0;
+                    font-size:13px;
+                }
+            }
+        }
+
+        #descobre_emp {
+    
+            margin: 8vh 0vw;
+            margin-bottom: 0;
+            flex-direction: column;
+    
+            .empr_foto {
+                
+                max-height: 304px;
+                padding-right: 0;
+            }
+    
+            .empr_cont {
+    
+                margin: auto;
+                padding: 24px 13px 0;
+    
+                .empr_titulo {
+    
+                    h1 {
+    
+                        font-size: 18px;
+                        line-height: 1.94;
+                        font-weight: 700;
+                        margin-top: 0;
+                        margin-right: auto;
+                        margin-left: 0;
+                    }
+                }
+    
+                .empr_texto {
+    
+                    font-size:13px;
+                    padding: 0 0 32px;
+                    line-height: 1.69;
+                    color: #4c555f;
+                    font-weight: 400;
+                    margin-top: 5px;
+                    margin-bottom: 16px;
+                }
+
+                button {
+
+                    justify-content: center;
+                    margin: 0 auto;
+                    width: 100%;
+                    font-size:13px;
+                    position: relative;
+                    bottom: 20px;
+                }
+            }
+        }
+
+        #pesquisas {
+
+            margin-bottom: 8vh;
+
+            h1 {
+
+                font-size: 18px;
+                padding: 0 13px;
+                margin-bottom: 32px;
+            }
+
+            .pesquisas_barra {
+    
+                font-size:15px;
+    
+                .pesquisas_texto {
+    
+                    margin-bottom: 8px;
+                }
+            }
+        }
+    }
+    
+    footer {
+        
+        margin-bottom: 0;
+        padding: 8vh 1vw;
+        padding-bottom: 4vh;
+            
+        margin-bottom: 0;
+        padding-bottom: 4vh;
+        border-top: .7px solid #dae4ea;
+
+        .footer_cima {
+
+            flex-direction: column;
+            justify-content: center;
+
+            .col_footer {
+
+                justify-content: center;
+                width: 100%;
+                max-width: 100%;
+                margin-bottom: 50px;
+
+                .logo_footer {
+
+                    margin: 0 0 13px;
+                    justify-content: center;
+
+                    img {
+
+                        height: 27px;
+                    }
+                }
+
+                .icons_social {
+                    
+                    justify-content: center;
+
+                    .social {
+
+                        width: 24px;
+                        height: 24px;
+                        font-size: 10px;
+                        margin: 0 8px;
+                    }
+                }
+
+                ul {
+
+                    flex-direction: column;
+                    margin-left: 0;
+                    margin-top: 0;
+                    display: flex;
+                    justify-content: center;
+                    width: 100%;
+                    max-width: 100%;
+
+                    li {
+
+                        margin-bottom: 10px;
+                        margin-right: 0;
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        justify-content: center;
+                        max-width: 100%;
+                    }
+                }
+            }
+
+            #f1 {
+
+                margin-bottom: 24px;
+            }
+        }
+
+        .footer_baixo {
+
+            flex-direction: column;
+            justify-content: center;
+            margin: 0 1vw;
+            border-top: .7px solid #dae4ea;
+            padding-top: 4vh;
+
+            .baixo_cont {
+
+                font-size:13px;
+            }
+
+            #baixo_esq {
+
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            #baixo_dir {
+
+                margin-right: auto;
+                margin-left: auto;
+            }
+        }
+    }
+}
+
+@media screen and ( max-width: 704px ) {
+
+    .corpo {
+
+        max-width: 704px;
+
+        .mostra {
+
+            margin: 2px 10px;
+            padding: .5vh 1vw;
+
+            .controlos {
+                
+                margin: 5.5vh 10.5vw;
+    
+                div {
+    
+                    display: flex;
+                    align-items: flex-end;
+                    justify-content: center;
+                }
+    
+                .vertodos {
+                    
+                    order: 3;
+                    display: flex;
+                    align-items: center;
+                    
+                    a {
+    
+                        font-size:13px;
+                        font-weight: 600;
+                        margin-left: 3px;
+                        margin-bottom: 0;
+                    }
+                }
+        
+                .setas {
+        
+                    order: 2;
+                    font-size: 12.8px;
+                    display: flex;
+                    align-items: flex-end;
+                    justify-content: flex-start;
+                    margin-bottom: 1px;
+                }
+        
+                .titulo_mostra {
+        
+                    order: 1;
+                    
+                    h1 {
+    
+                        font-size:15px;
+                    }
+                }
+            }
+    
+            .slideshow {
+        
+                margin: 1vh 10.5vw;
+                height: 30vh;
+                margin-bottom: 0;
+        
+                .slide{
+                
+                    min-width: calc( ( 100% / 8 ) * ( 8 / 1 ) );
+                    width: calc( ( 100% / 8 ) * ( 8 / 1 ) );
+                    max-width: calc( ( 100% / 8 ) * ( 8 / 1 ) );
+                    margin: 0 10px;
+    
+                    .foto_casa {
+    
+                        img {
+    
+                            height: 190%;
+                            width: 190%;
+                        }
+                    }
+                }
+    
+                .ultimo_slide {
+    
+                    margin-right: 0;
+                }
+            }
+        }
+    
+        #concelhos {
+    
+            padding: .5vh 1vw;
+            padding-bottom: 0;
+            margin: auto;
+            justify-content: center;
+            width: 100%;
+    
+            h1 {
+    
+                font-size: 24px;
+                padding: 0 13px;
+                margin-bottom: 32px;
+                margin-left: 1.5vw;
+                text-align: center;
+            }
+    
+            .mostra_concelhos {
+    
+                width: 100%;
+                align-self: center;
+    
+                .procura_concelho {
+        
+                    max-width: calc( ( 100% - 1.8vw ) / 1 );
+                    margin: .5vh .3vw;
+                    height: 100px;
+                    background-size: 110%;
+                }
+            }
+        }
+    }
+
+    .corpo2 {
+
+        width: 100%;
+        max-width: 100%;
+        
+        #agentes {
+    
+            padding: 0;
+    
+            .titulo_agentes {
+    
+                top: 320px;
+                position: relative;
+                z-index: 4;
+    
+                h4 {
+    
+                    font-size:13px;
+                    color: white;
+                    padding: 0 22.5px;
+                }
+            }
+    
+            .agentes_container {
+    
+                .imagem_agentes {
+    
+                    height: 448px;
+                    background-size: cover;
+                    
+                    .botoes_agentes {
+    
+                        margin-right: auto;
+                        margin-bottom: 5px;
+                        margin-top: auto;
+                        margin-left: auto;
+                        border-radius: 15px;
+                        flex-direction: column;
+                        width: 100%;
+                        justify-content: center;
+                        padding: 0 13px;
+    
+                        button {
+    
+                            margin: 10px 15px;
+                            padding: 13px 17vw;
+                            white-space: nowrap;
+                            font-size:13px;
+                            width: 95%;
+                            height: 40px;
+                        }
+                    }
+                }
+    
+                .container_titulo_agentes {
+    
+                    top: 310px;
+                    z-index: 4;
+                    width: 100%;
+    
+                    h1 {
+    
+                        color: white;
+                        padding: 0 22.5px;
+                        font-size: 24px;
+                        width: 100%;
+                    }
+                }
+    
+                .agentes_texto {
+    
+                    order: 3;
+                    width: 100%;
+                    padding: 32px 13px 0;
+                    font-size:13px;
+                }
+            }
+        }
+
+        #descobre_emp {
+    
+            margin: 8vh 0vw;
+            margin-bottom: 0;
+            flex-direction: column;
+    
+            .empr_foto {
+                
+                max-height: 304px;
+                padding-right: 0;
+            }
+    
+            .empr_cont {
+    
+                margin: auto;
+                padding: 24px 13px 0;
+    
+                .empr_titulo {
+    
+                    h1 {
+    
+                        font-size: 18px;
+                        line-height: 1.94;
+                        font-weight: 700;
+                        margin-top: 0;
+                        margin-right: auto;
+                        margin-left: 0;
+                    }
+                }
+    
+                .empr_texto {
+    
+                    font-size:13px;
+                    padding: 0 0 32px;
+                    line-height: 1.69;
+                    color: #4c555f;
+                    font-weight: 400;
+                    margin-top: 5px;
+                    margin-bottom: 16px;
+                }
+
+                button {
+
+                    justify-content: center;
+                    margin: 0 auto;
+                    width: 100%;
+                    font-size:13px;
+                    position: relative;
+                    bottom: 20px;
+                }
+            }
+        }
+
+        #pesquisas {
+
+            h1 {
+
+                font-size: 18px;
+                padding: 0 13px;
+                margin-bottom: 32px;
+            }
+
+            .pesquisas_barra {
+
+                font-size:15px;
+
+                .pesquisas_texto {
+
+                    margin-bottom: 8px;
+                }
+            }
+        }
+    }
+    
+    footer {
+        
+        margin-bottom: 0;
+        padding: 8vh 1vw;
+        padding-bottom: 4vh;
+            
+        margin-bottom: 0;
+        padding-bottom: 4vh;
+        border-top: .7px solid #dae4ea;
+
+        .footer_cima {
+
+            flex-direction: column;
+            justify-content: center;
+
+            .col_footer {
+
+                justify-content: center;
+                width: 100%;
+                max-width: 100%;
+                margin-bottom: 50px;
+
+                .logo_footer {
+
+                    margin: 0 0 13px;
+                    justify-content: center;
+
+                    img {
+
+                        height: 27px;
+                    }
+                }
+
+                .icons_social {
+                    
+                    justify-content: center;
+
+                    .social {
+
+                        width: 24px;
+                        height: 24px;
+                        font-size: 10px;
+                        margin: 0 8px;
+                    }
+                }
+
+                ul {
+
+                    flex-direction: column;
+                    margin-left: 0;
+                    margin-top: 0;
+                    display: flex;
+                    justify-content: center;
+                    width: 100%;
+                    max-width: 100%;
+
+                    li {
+
+                        margin-bottom: 10px;
+                        margin-right: 0;
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        justify-content: center;
+                        max-width: 100%;
+                    }
+                }
+            }
+
+            #f1 {
+
+                margin-bottom: 24px;
+            }
+        }
+
+        .footer_baixo {
+
+            flex-direction: column;
+            justify-content: center;
+            margin: 0 1vw;
+            border-top: .7px solid #dae4ea;
+            padding-top: 4vh;
+
+            .baixo_cont {
+
+                font-size:13px;
+            }
+
+            #baixo_esq {
+
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            #baixo_dir {
+
+                margin-right: auto;
+                margin-left: auto;
+            }
+        }
+    }
+}
+
